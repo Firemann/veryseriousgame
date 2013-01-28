@@ -161,3 +161,23 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# Unity3D .gitignore file.
+#	 Store this file at the root of your local repository.
+unity-project/Library/AssetImportState
+unity-project/Library/AssetServerCacheV3
+unity-project/Library/FailedAssetImports.txt
+unity-project/Library/ScriptAssemblies
+unity-project/Library/ScriptMapper
+unity-project/Library/assetDatabase3
+unity-project/Library/cache
+unity-project/Library/expandedItems
+unity-project/Library/metadata
+unity-project/Library/previews
+unity-project/Library/guidmapper
+unity-project/Temp
+unity-project/*.csproj
+unity-project/*.pidb
+unity-project/*.sln
+unity-project/build
+############
