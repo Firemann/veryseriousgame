@@ -3,11 +3,16 @@ using System.Collections;
 
 public class Cuby : MonoBehaviour {
 	
-	private float vitesse = 0.05f;
+	public GameObject playerCamera;
+	private float vitesse = 0.5f;
 
 	// Use this for initialization
 	void Start () {
-	
+		if (!networkView.isMine) //si ce perso ne m'appartient pas
+		{
+		 	Destroy(playerCamera);
+		 	this.enabled = false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -26,6 +31,6 @@ public class Cuby : MonoBehaviour {
 			transform.Translate(Vector3.right * vitesse);
   
 		if ( Input.GetKeyDown(KeyCode.Space) ) //le saut
-			rigidbody.AddForce(Vector3.up * 350);
+			rigidbody.AddForce(Vector3.up * 4000);
 	}
 }

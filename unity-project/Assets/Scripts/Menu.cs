@@ -12,9 +12,6 @@ public class Menu : MonoBehaviour {
 	private int serverPort = 25000;
 	
 	public void Start() {
-		networkMaster = new GameObject(); // Prefab
-		instantiatedMaster = new GameObject(); //Prefab instancié
-		scriptStartNet = new StartNetwork();
 	}
 	
 	public void OnGUI() {
@@ -37,13 +34,17 @@ public class Menu : MonoBehaviour {
 			//Création du serveur
 			instantiatedMaster = Instantiate(networkMaster, Vector3.zero, Quaternion.identity) as GameObject;
 			scriptStartNet = instantiatedMaster.GetComponent("StartNetwork") as StartNetwork;
-			scriptStartNet.Server = true;
+			scriptStartNet.server = true;
+			scriptStartNet.listenPort = serverPort;
+			scriptStartNet.remoteIP = serverIP;
 		}
 		if (GUI.Button(new Rect(10, 60, sizeButtonX, sizeButtonY), "Join server")) {
 			//Rejoindre serveur
 			instantiatedMaster = Instantiate(networkMaster, Vector3.zero, Quaternion.identity) as GameObject;
 			scriptStartNet = instantiatedMaster.GetComponent("StartNetwork") as StartNetwork;
-			scriptStartNet.Server = false;
+			scriptStartNet.server = false;
+			scriptStartNet.listenPort = serverPort;
+			scriptStartNet.remoteIP = serverIP;
 		}
 		GUI.EndGroup();
 	}
