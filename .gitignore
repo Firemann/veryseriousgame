@@ -180,3 +180,6 @@ unity-project/*.pidb
 unity-project/*.sln
 unity-project/build
 ############
+
+# Java Middleware
+veryseriousmiddleware/bin
