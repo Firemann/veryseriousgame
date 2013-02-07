@@ -21,12 +21,12 @@ public class Lift : MonoBehaviour {
 	void OnSwitched(){
 		if (!isMoving){
 			isMoving=true;
-								print("lol");
+
 			if (isDown){
 				//monter
-				while (transform.localPosition.y < upPosition)
+				while (transform.localPosition.y < upPosition)							
 				{
-					LiftToUp();
+					StartCoroutine(LiftToUp());
 				}
 				
 				isDown=false;
@@ -36,9 +36,10 @@ public class Lift : MonoBehaviour {
 				//descendre
 				while (transform.localPosition.y < upPosition)
 				{
-					LiftToDown ();
+
+					StartCoroutine(LiftToDown ());
 				}
-				
+									print ("lol");
 				isDown=true;
 				
 			}
