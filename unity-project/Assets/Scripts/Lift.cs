@@ -18,16 +18,15 @@ public class Lift : MonoBehaviour {
 	
 	}
 	
-	IEnumerator OnSwitched(){
+	void OnSwitched(){
 		if (!isMoving){
 			isMoving=true;
-			
+								print("lol");
 			if (isDown){
 				//monter
 				while (transform.localPosition.y < upPosition)
 				{
-					yield return new WaitForSeconds(latence);
-					transform.position.y += 0.1;
+					LiftToUp();
 				}
 				
 				isDown=false;
@@ -37,8 +36,7 @@ public class Lift : MonoBehaviour {
 				//descendre
 				while (transform.localPosition.y < upPosition)
 				{
-					yield return new WaitForSeconds(latence);
-					transform.position.y -= 0.1;
+					LiftToDown ();
 				}
 				
 				isDown=true;
@@ -59,6 +57,21 @@ public class Lift : MonoBehaviour {
 		}
 	}
 	
+	// Problem solved :)
+	
+	IEnumerator LiftToUp() {
+		yield return new WaitForSeconds(latence);
+		Vector3 v = transform.position;
+		v.y += 0.1f;
+		transform.position = v;
+	}
+	
+	IEnumerator LiftToDown() {
+		yield return new WaitForSeconds(latence);
+		Vector3 v = transform.position;
+		v.y -= 0.1f;
+		transform.position = v;
+	}
 	
 	
 }
