@@ -27,6 +27,7 @@ public class Lift : MonoBehaviour {
 				while (transform.localPosition.y < upPosition)
 				{
 					yield return new WaitForSeconds(latence);
+					Vector3 v = transform.position;
 					transform.position.y += 0.1;
 				}
 				

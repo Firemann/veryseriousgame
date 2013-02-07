@@ -38,7 +38,7 @@ public class LinkSyncSCR : MonoBehaviour {
 				lastMessage=test.res;
 			}
 		}
-		test.fnPacketTest(PlayerCoord.position[0]+","+PlayerCoord.position[1]+","+PlayerCoord.position[2]);
+		//test.fnPacketTest(PlayerCoord.position[0]+","+PlayerCoord.position[1]+","+PlayerCoord.position[2]);
 	}
  
 	void OnApplicationQuit (){

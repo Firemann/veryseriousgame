@@ -16,11 +16,12 @@ public class TCPServer {
 	            Socket connectionSocket = welcomeSocket.accept();
 	         while(true)
 	         {
-	            System.out.println("lal");
 	            BufferedReader inFromClient =
 	               new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+	            System.out.println("lal1");
 	            //DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 	            clientSentence = inFromClient.readLine();
+	            System.out.println("lal2");
 	            System.out.println("Received: " + clientSentence);
 	            //capitalizedSentence = clientSentence.toUpperCase() + '\n';
 	            //outToClient.writeBytes(capitalizedSentence);
