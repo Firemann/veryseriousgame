@@ -1,6 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TCP\LinkSyncSCR.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Cuby.cs" Line="6" Column="27" />
+      <File FileName="Assets\Scripts\TCP\LinkSyncSCR.cs" Line="26" Column="11" />
+      <File FileName="Assets\Scripts\StartNetwork.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GroundAnalyst.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Lift.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TCP\Connector.cs" Line="41" Column="35" />
+      <File FileName="Assets\Scripts\TCP\Json.cs" Line="25" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -22,7 +22,8 @@ public class LinkSyncSCR : MonoBehaviour {
 		if (Input.GetKeyDown ("space")) 
 		{
 	        Debug.Log ("space key was pressed");
-			test.fnPacketTest("space key was pressed");
+			Kikou k = new Kikou(18, "Benjamin", "FÜHRMANN");
+			test.fnJsonTest(k);
 		}
  
 		if (Input.GetKeyDown ("escape")) 

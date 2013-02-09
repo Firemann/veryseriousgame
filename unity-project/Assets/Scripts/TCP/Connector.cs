@@ -9,6 +9,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Collections;
+using JsonFx.Json;
 
 public class Connector {
 	
@@ -36,7 +37,7 @@ public class Connector {
 				client.GetStream().BeginRead(readBuffer, 0, READ_BUFFER_SIZE, new AsyncCallback(DoRead), null);
 				// Make sure the window is showing before popping up connection dialog.
  
-				AttemptLogin(sUserName);
+				//AttemptLogin(sUserName);
 				return "Connection Succeeded";
 			} 
 			catch(Exception ex)
@@ -52,6 +53,11 @@ public class Connector {
 		public void fnPacketTest(string sInfo)
 		{
 			SendData("CHAT|" + sInfo);
+		}
+	
+		public void fnJsonTest(object obj) {
+			string s = JsonWriter.Serialize(obj);
+			SendData(s);
 		}
  
 		public void fnDisconnect()
