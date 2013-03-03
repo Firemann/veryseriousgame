@@ -23,6 +23,7 @@ public class VSServerI extends VSServer {
 		if(clientsList.contains(client))
 			throw new AlreadyConnectedException();
 		clientsList.add(client);
+		System.out.println("Registered");
 		System.out.println("New Client connected : " + client.getClientType());
 	}
 	

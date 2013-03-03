@@ -32,7 +32,7 @@ public class VSMiddleware extends Application {
 	
 	@Override
 	public int run(String[] args) {
-		// Manage correct ending of the program for whatever origin 
+		// Manage correct ending of the program for whatever issue 
 		setInterruptHook(new Thread() {
 			
 			@Override

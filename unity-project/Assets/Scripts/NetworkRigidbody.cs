@@ -76,7 +76,7 @@ public class NetworkRigidbody : MonoBehaviour
  // And only if no more data arrives we will use extra polation
  void Update () {
   // This is the target playback time of the rigid body
-  double interpolationTime = Network.time - m_InterpolationBackTime;
+  double interpolationTime = UnityEngine.Network.time - m_InterpolationBackTime;
    
   // Use interpolation if the target playback time is present in the buffer
   if (m_BufferedState[0].timestamp > interpolationTime)
