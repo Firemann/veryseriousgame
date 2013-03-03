@@ -23,19 +23,19 @@ package vsm.component;
 public final class VSTransformPrxHelper extends Ice.ObjectPrxHelperBase implements VSTransformPrx
 {
     public void
-    rotate(vsm.Vector3 translation)
+    rotate(vsm.VSVector3 translation)
     {
         rotate(translation, null, false);
     }
 
     public void
-    rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
     {
         rotate(translation, __ctx, true);
     }
 
     private void
-    rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx)
     {
         if(__explicitCtx && __ctx == null)
         {
@@ -65,37 +65,37 @@ public final class VSTransformPrxHelper extends Ice.ObjectPrxHelperBase implemen
 
     private static final String __rotate_name = "rotate";
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation)
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation)
     {
         return begin_rotate(translation, null, false, null);
     }
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
     {
         return begin_rotate(translation, __ctx, true, null);
     }
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, Ice.Callback __cb)
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, Ice.Callback __cb)
     {
         return begin_rotate(translation, null, false, __cb);
     }
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb)
     {
         return begin_rotate(translation, __ctx, true, __cb);
     }
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, Callback_VSTransform_rotate __cb)
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, Callback_VSTransform_rotate __cb)
     {
         return begin_rotate(translation, null, false, __cb);
     }
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_rotate __cb)
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_rotate __cb)
     {
         return begin_rotate(translation, __ctx, true, __cb);
     }
 
-    private Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx, IceInternal.CallbackBase __cb)
+    private Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx, IceInternal.CallbackBase __cb)
     {
         IceInternal.OutgoingAsync __result = new IceInternal.OutgoingAsync(this, __rotate_name, __cb);
         try
@@ -119,19 +119,19 @@ public final class VSTransformPrxHelper extends Ice.ObjectPrxHelperBase implemen
     }
 
     public void
-    translate(vsm.Vector3 translation)
+    translate(vsm.VSVector3 translation)
     {
         translate(translation, null, false);
     }
 
     public void
-    translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
     {
         translate(translation, __ctx, true);
     }
 
     private void
-    translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx)
     {
         if(__explicitCtx && __ctx == null)
         {
@@ -161,37 +161,37 @@ public final class VSTransformPrxHelper extends Ice.ObjectPrxHelperBase implemen
 
     private static final String __translate_name = "translate";
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation)
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation)
     {
         return begin_translate(translation, null, false, null);
     }
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
     {
         return begin_translate(translation, __ctx, true, null);
     }
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, Ice.Callback __cb)
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, Ice.Callback __cb)
     {
         return begin_translate(translation, null, false, __cb);
     }
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb)
     {
         return begin_translate(translation, __ctx, true, __cb);
     }
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, Callback_VSTransform_translate __cb)
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, Callback_VSTransform_translate __cb)
     {
         return begin_translate(translation, null, false, __cb);
     }
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_translate __cb)
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_translate __cb)
     {
         return begin_translate(translation, __ctx, true, __cb);
     }
 
-    private Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx, IceInternal.CallbackBase __cb)
+    private Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, boolean __explicitCtx, IceInternal.CallbackBase __cb)
     {
         IceInternal.OutgoingAsync __result = new IceInternal.OutgoingAsync(this, __translate_name, __cb);
         try

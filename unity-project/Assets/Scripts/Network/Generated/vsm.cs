@@ -36,7 +36,7 @@ namespace vsm
     [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")]
     [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
     [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
-    public partial struct Vector2
+    public partial struct VSVector2
     {
         #region Slice data members
 
@@ -51,7 +51,7 @@ namespace vsm
         #region Constructor
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public Vector2(float x, float y)
+        public VSVector2(float x, float y)
         {
             this.x = x;
             this.y = y;
@@ -73,11 +73,11 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public override bool Equals(object other__)
         {
-            if(!(other__ is Vector2))
+            if(!(other__ is VSVector2))
             {
                 return false;
             }
-            Vector2 o__ = (Vector2)other__;
+            VSVector2 o__ = (VSVector2)other__;
             if(!x.Equals(o__.x))
             {
                 return false;
@@ -94,13 +94,13 @@ namespace vsm
         #region Comparison members
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public static bool operator==(Vector2 lhs__, Vector2 rhs__)
+        public static bool operator==(VSVector2 lhs__, VSVector2 rhs__)
         {
             return Equals(lhs__, rhs__);
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public static bool operator!=(Vector2 lhs__, Vector2 rhs__)
+        public static bool operator!=(VSVector2 lhs__, VSVector2 rhs__)
         {
             return !Equals(lhs__, rhs__);
         }
@@ -136,7 +136,7 @@ namespace vsm
     [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")]
     [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
     [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
-    public partial struct Vector3
+    public partial struct VSVector3
     {
         #region Slice data members
 
@@ -154,7 +154,7 @@ namespace vsm
         #region Constructor
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public Vector3(float x, float y, float z)
+        public VSVector3(float x, float y, float z)
         {
             this.x = x;
             this.y = y;
@@ -178,11 +178,11 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public override bool Equals(object other__)
         {
-            if(!(other__ is Vector3))
+            if(!(other__ is VSVector3))
             {
                 return false;
             }
-            Vector3 o__ = (Vector3)other__;
+            VSVector3 o__ = (VSVector3)other__;
             if(!x.Equals(o__.x))
             {
                 return false;
@@ -203,13 +203,13 @@ namespace vsm
         #region Comparison members
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public static bool operator==(Vector3 lhs__, Vector3 rhs__)
+        public static bool operator==(VSVector3 lhs__, VSVector3 rhs__)
         {
             return Equals(lhs__, rhs__);
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public static bool operator!=(Vector3 lhs__, Vector3 rhs__)
+        public static bool operator!=(VSVector3 lhs__, VSVector3 rhs__)
         {
             return !Equals(lhs__, rhs__);
         }

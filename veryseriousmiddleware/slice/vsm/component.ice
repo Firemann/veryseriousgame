@@ -11,10 +11,10 @@ module vsm {
 		};
 		
 		class VSTransform extends VSComponent {
-			void translate(Vector3 translation);
-			void rotate(Vector3 translation);
+			void translate(VSVector3 translation);
+			void rotate(VSVector3 translation);
 		}; 
-	
+		
 	};
 };
 

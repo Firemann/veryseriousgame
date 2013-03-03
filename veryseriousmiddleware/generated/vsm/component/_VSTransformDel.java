@@ -22,9 +22,9 @@ package vsm.component;
 
 public interface _VSTransformDel extends _VSComponentDel
 {
-    void translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    void translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
         throws IceInternal.LocalExceptionWrapper;
 
-    void rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    void rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
         throws IceInternal.LocalExceptionWrapper;
 }

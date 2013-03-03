@@ -22,7 +22,7 @@ package vsm.component;
 
 public interface _VSTransformOperationsNC
 {
-    void translate(vsm.Vector3 translation);
+    void translate(vsm.VSVector3 translation);
 
-    void rotate(vsm.Vector3 translation);
+    void rotate(vsm.VSVector3 translation);
 }

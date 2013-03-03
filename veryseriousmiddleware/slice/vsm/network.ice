@@ -2,6 +2,7 @@
 #define _NETWORK_ICE
 
 #include <vsm.ice>
+#include <vsm/component.ice>
 
 module vsm {
 	module network {
@@ -10,8 +11,12 @@ module vsm {
 			UNITY
 		};
 	
-		class VSClient extends VSObject {
-			idempotent ClientType getClientType();
+		interface VSClient {
+			ClientType getClientType();
+		};
+	
+		class VSUnityClient extends VSObject implements VSClient {
+			vsm::component::VSTransform* getTransform();
 		};
 		
 		exception AlreadyConnectedException {

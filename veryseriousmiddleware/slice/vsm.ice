@@ -3,12 +3,12 @@
 
 module vsm {
 
-	struct Vector2 {
+	struct VSVector2 {
 		float x;
 		float y;
 	};
 
-	struct Vector3 {
+	struct VSVector3 {
 		float x;
 		float y;
 		float z;

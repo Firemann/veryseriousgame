@@ -27,7 +27,7 @@ public final class _VSClientDelD extends Ice._ObjectDelD implements _VSClientDel
         throws IceInternal.LocalExceptionWrapper
     {
         final Ice.Current __current = new Ice.Current();
-        __initCurrent(__current, "getClientType", Ice.OperationMode.Idempotent, __ctx);
+        __initCurrent(__current, "getClientType", Ice.OperationMode.Normal, __ctx);
         final ClientTypeHolder __result = new ClientTypeHolder();
         IceInternal.Direct __direct = null;
         try

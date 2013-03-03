@@ -2,7 +2,6 @@ package vsm;
 
 import java.lang.reflect.InvocationTargetException;
 
-import unityView.UnityView;
 import vsm.network.VSServer;
 import vsm.network.VSServerI;
 import Ice.Application;
@@ -25,7 +24,6 @@ public class VSMiddleware extends Application {
 
 	public static void main(String... args) {
 		VSMiddleware vsm = new VSMiddleware();
-		new UnityView();
 		int status = vsm.main("Very Serious Middleware", args);
 		System.exit(status);
 	}

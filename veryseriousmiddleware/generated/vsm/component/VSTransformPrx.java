@@ -22,39 +22,39 @@ package vsm.component;
 
 public interface VSTransformPrx extends VSComponentPrx
 {
-    public void translate(vsm.Vector3 translation);
+    public void translate(vsm.VSVector3 translation);
 
-    public void translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx);
+    public void translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation);
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation);
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, Ice.Callback __cb);
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, Callback_VSTransform_translate __cb);
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, Callback_VSTransform_translate __cb);
 
-    public Ice.AsyncResult begin_translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_translate __cb);
+    public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_translate __cb);
 
     public void end_translate(Ice.AsyncResult __result);
 
-    public void rotate(vsm.Vector3 translation);
+    public void rotate(vsm.VSVector3 translation);
 
-    public void rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx);
+    public void rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation);
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation);
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, Ice.Callback __cb);
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, Callback_VSTransform_rotate __cb);
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, Callback_VSTransform_rotate __cb);
 
-    public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_rotate __cb);
+    public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx, Callback_VSTransform_rotate __cb);
 
     public void end_rotate(Ice.AsyncResult __result);
 }

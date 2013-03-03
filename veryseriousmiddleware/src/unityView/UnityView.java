@@ -2,19 +2,30 @@ package unityView;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import vsm.VSMiddleware;
+import vsm.VSVector3;
+import vsm.component.VSTransformPrx;
+import vsm.network.VSUnityClientPrx;
 
 @SuppressWarnings("serial")
 public class UnityView extends JFrame {
 
-	public UnityView() {
+	VSUnityClientPrx unityClientPrx;
+	VSTransformPrx transformPrx;
+	public UnityView(VSUnityClientPrx unityClientPrx) {
+		this.unityClientPrx = unityClientPrx;
+		transformPrx = unityClientPrx.getTransform();
+		
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			
@@ -30,11 +41,28 @@ public class UnityView extends JFrame {
 		mainPanel.add(new JPanel());
 		mainPanel.add(new JPanel());
 		mainPanel.add(new JPanel());
-		mainPanel.add(new JButton("Up"));
+		JButton upButton = new JButton("Up");
+		upButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						transformPrx.translate(new VSVector3(0, 0, 20f));
+					}
+				});
+			}
+		});
+		mainPanel.add(upButton);
 		mainPanel.add(new JPanel());
-		mainPanel.add(new JButton("Left"));
-		mainPanel.add(new JButton("Down"));
-		mainPanel.add(new JButton("Right"));
+		JButton leftButton = new JButton("Left");
+		mainPanel.add(leftButton);
+		JButton downButton = new JButton("Down");
+		mainPanel.add(downButton);
+		JButton rightButton = new JButton("Right");
+		mainPanel.add(rightButton);
 		
 		this.setContentPane(mainPanel);
 		this.setPreferredSize(new Dimension(800, 600));

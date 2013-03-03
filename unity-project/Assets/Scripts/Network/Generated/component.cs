@@ -158,20 +158,20 @@ namespace vsm
             #region Slice operations
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public void translate(vsm.Vector3 translation)
+            public void translate(vsm.VSVector3 translation)
             {
                 translate(translation, Ice.ObjectImpl.defaultCurrent);
             }
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public abstract void translate(vsm.Vector3 translation, Ice.Current current__);
+            public abstract void translate(vsm.VSVector3 translation, Ice.Current current__);
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public void rotate(vsm.Vector3 translation)
+            public void rotate(vsm.VSVector3 translation)
             {
                 rotate(translation, Ice.ObjectImpl.defaultCurrent);
             }
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public abstract void rotate(vsm.Vector3 translation, Ice.Current current__);
+            public abstract void rotate(vsm.VSVector3 translation, Ice.Current current__);
 
             #endregion
 
@@ -239,8 +239,8 @@ namespace vsm
                 checkMode__(Ice.OperationMode.Normal, current__.mode);
                 IceInternal.BasicStream is__ = inS__.istr();
                 is__.startReadEncaps();
-                vsm.Vector3 translation;
-                translation = new vsm.Vector3();
+                vsm.VSVector3 translation;
+                translation = new vsm.VSVector3();
                 translation.read__(is__);
                 is__.endReadEncaps();
                 obj__.translate(translation, current__);
@@ -254,8 +254,8 @@ namespace vsm
                 checkMode__(Ice.OperationMode.Normal, current__.mode);
                 IceInternal.BasicStream is__ = inS__.istr();
                 is__.startReadEncaps();
-                vsm.Vector3 translation;
-                translation = new vsm.Vector3();
+                vsm.VSVector3 translation;
+                translation = new vsm.VSVector3();
                 translation.read__(is__);
                 is__.endReadEncaps();
                 obj__.rotate(translation, current__);
@@ -383,25 +383,25 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public interface VSTransformPrx : vsm.component.VSComponentPrx
         {
-            void translate(vsm.Vector3 translation);
-            void translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
+            void translate(vsm.VSVector3 translation);
+            void translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
 
-            Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.Vector3 translation);
-            Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__);
+            Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.VSVector3 translation);
+            Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__);
 
-            Ice.AsyncResult begin_translate(vsm.Vector3 translation, Ice.AsyncCallback cb__, object cookie__);
-            Ice.AsyncResult begin_translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
+            Ice.AsyncResult begin_translate(vsm.VSVector3 translation, Ice.AsyncCallback cb__, object cookie__);
+            Ice.AsyncResult begin_translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
 
             void end_translate(Ice.AsyncResult r__);
 
-            void rotate(vsm.Vector3 translation);
-            void rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
+            void rotate(vsm.VSVector3 translation);
+            void rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
 
-            Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.Vector3 translation);
-            Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__);
+            Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.VSVector3 translation);
+            Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__);
 
-            Ice.AsyncResult begin_rotate(vsm.Vector3 translation, Ice.AsyncCallback cb__, object cookie__);
-            Ice.AsyncResult begin_rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
+            Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, Ice.AsyncCallback cb__, object cookie__);
+            Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
 
             void end_rotate(Ice.AsyncResult r__);
         }
@@ -415,17 +415,17 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public interface VSTransformOperations_
         {
-            void translate(vsm.Vector3 translation, Ice.Current current__);
+            void translate(vsm.VSVector3 translation, Ice.Current current__);
 
-            void rotate(vsm.Vector3 translation, Ice.Current current__);
+            void rotate(vsm.VSVector3 translation, Ice.Current current__);
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public interface VSTransformOperationsNC_
         {
-            void translate(vsm.Vector3 translation);
+            void translate(vsm.VSVector3 translation);
 
-            void rotate(vsm.Vector3 translation);
+            void rotate(vsm.VSVector3 translation);
         }
     }
 }
@@ -600,17 +600,17 @@ namespace vsm
         {
             #region Synchronous operations
 
-            public void rotate(vsm.Vector3 translation)
+            public void rotate(vsm.VSVector3 translation)
             {
                 rotate(translation, null, false);
             }
 
-            public void rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
+            public void rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
             {
                 rotate(translation, context__, true);
             }
 
-            private void rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__, bool explicitContext__)
+            private void rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__, bool explicitContext__)
             {
                 if(explicitContext__ && context__ == null)
                 {
@@ -638,17 +638,17 @@ namespace vsm
                 }
             }
 
-            public void translate(vsm.Vector3 translation)
+            public void translate(vsm.VSVector3 translation)
             {
                 translate(translation, null, false);
             }
 
-            public void translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
+            public void translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
             {
                 translate(translation, context__, true);
             }
 
-            private void translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__, bool explicitContext__)
+            private void translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__, bool explicitContext__)
             {
                 if(explicitContext__ && context__ == null)
                 {
@@ -680,22 +680,22 @@ namespace vsm
 
             #region Asynchronous operations
 
-            public Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.Vector3 translation)
+            public Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.VSVector3 translation)
             {
                 return begin_rotate(translation, null, false, null, null);
             }
 
-            public Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__)
+            public Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__)
             {
                 return begin_rotate(translation, ctx__, true, null, null);
             }
 
-            public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, Ice.AsyncCallback cb__, object cookie__)
+            public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, Ice.AsyncCallback cb__, object cookie__)
             {
                 return begin_rotate(translation, null, false, cb__, cookie__);
             }
 
-            public Ice.AsyncResult begin_rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__)
+            public Ice.AsyncResult begin_rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__)
             {
                 return begin_rotate(translation, ctx__, true, cb__, cookie__);
             }
@@ -707,7 +707,7 @@ namespace vsm
                 end__(r__, __rotate_name);
             }
 
-            private Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            private Ice.AsyncResult<vsm.component.Callback_VSTransform_rotate> begin_rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
             {
                 IceInternal.OnewayOutgoingAsync<vsm.component.Callback_VSTransform_rotate> result__ = new IceInternal.OnewayOutgoingAsync<vsm.component.Callback_VSTransform_rotate>(this, __rotate_name, rotate_completed__, cookie__);
                 if(cb__ != null)
@@ -737,22 +737,22 @@ namespace vsm
                 }
             }
 
-            public Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.Vector3 translation)
+            public Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.VSVector3 translation)
             {
                 return begin_translate(translation, null, false, null, null);
             }
 
-            public Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__)
+            public Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__)
             {
                 return begin_translate(translation, ctx__, true, null, null);
             }
 
-            public Ice.AsyncResult begin_translate(vsm.Vector3 translation, Ice.AsyncCallback cb__, object cookie__)
+            public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, Ice.AsyncCallback cb__, object cookie__)
             {
                 return begin_translate(translation, null, false, cb__, cookie__);
             }
 
-            public Ice.AsyncResult begin_translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__)
+            public Ice.AsyncResult begin_translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__)
             {
                 return begin_translate(translation, ctx__, true, cb__, cookie__);
             }
@@ -764,7 +764,7 @@ namespace vsm
                 end__(r__, __translate_name);
             }
 
-            private Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            private Ice.AsyncResult<vsm.component.Callback_VSTransform_translate> begin_translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
             {
                 IceInternal.OnewayOutgoingAsync<vsm.component.Callback_VSTransform_translate> result__ = new IceInternal.OnewayOutgoingAsync<vsm.component.Callback_VSTransform_translate>(this, __translate_name, translate_completed__, cookie__);
                 if(cb__ != null)
@@ -963,9 +963,9 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public interface VSTransformDel_ : vsm.component.VSComponentDel_
         {
-            void translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
+            void translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
 
-            void rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
+            void rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__);
         }
     }
 }
@@ -984,7 +984,7 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public sealed class VSTransformDelM_ : Ice.ObjectDelM_, VSTransformDel_
         {
-            public void rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
+            public void rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
             {
                 IceInternal.Outgoing og__ = handler__.getOutgoing("rotate", Ice.OperationMode.Normal, context__);
                 try
@@ -1028,7 +1028,7 @@ namespace vsm
                 }
             }
 
-            public void translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
+            public void translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
             {
                 IceInternal.Outgoing og__ = handler__.getOutgoing("translate", Ice.OperationMode.Normal, context__);
                 try
@@ -1090,7 +1090,7 @@ namespace vsm
         public sealed class VSTransformDelD_ : Ice.ObjectDelD_, VSTransformDel_
         {
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031")]
-            public void rotate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
+            public void rotate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
             {
                 Ice.Current current__ = new Ice.Current();
                 initCurrent__(ref current__, "rotate", Ice.OperationMode.Normal, context__);
@@ -1133,7 +1133,7 @@ namespace vsm
             }
 
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031")]
-            public void translate(vsm.Vector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
+            public void translate(vsm.VSVector3 translation, _System.Collections.Generic.Dictionary<string, string> context__)
             {
                 Ice.Current current__ = new Ice.Current();
                 initCurrent__(ref current__, "translate", Ice.OperationMode.Normal, context__);

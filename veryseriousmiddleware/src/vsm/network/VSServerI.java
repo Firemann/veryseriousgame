@@ -4,6 +4,8 @@ import java.nio.channels.AlreadyConnectedException;
 import java.util.ArrayList;
 import java.util.List;
 
+import unityView.UnityView;
+
 import Ice.Current;
 import Ice.Object;
 import Ice.ObjectFactory;
@@ -23,8 +25,9 @@ public class VSServerI extends VSServer {
 		if(clientsList.contains(client))
 			throw new AlreadyConnectedException();
 		clientsList.add(client);
-		System.out.println("Registered");
 		System.out.println("New Client connected : " + client.getClientType());
+		if(client.getClientType() == ClientType.UNITY)
+			new UnityView(VSUnityClientPrxHelper.checkedCast(client));
 	}
 	
     public static Ice.ObjectFactory ice_factory() {

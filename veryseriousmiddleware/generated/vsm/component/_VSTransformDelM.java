@@ -23,7 +23,7 @@ package vsm.component;
 public final class _VSTransformDelM extends Ice._ObjectDelM implements _VSTransformDel
 {
     public void
-    rotate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    rotate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
         throws IceInternal.LocalExceptionWrapper
     {
         IceInternal.Outgoing __og = __handler.getOutgoing("rotate", Ice.OperationMode.Normal, __ctx);
@@ -69,7 +69,7 @@ public final class _VSTransformDelM extends Ice._ObjectDelM implements _VSTransf
     }
 
     public void
-    translate(vsm.Vector3 translation, java.util.Map<String, String> __ctx)
+    translate(vsm.VSVector3 translation, java.util.Map<String, String> __ctx)
         throws IceInternal.LocalExceptionWrapper
     {
         IceInternal.Outgoing __og = __handler.getOutgoing("translate", Ice.OperationMode.Normal, __ctx);

@@ -45,17 +45,43 @@ namespace vsm
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
+        public partial interface VSClient : Ice.Object, VSClientOperations_, VSClientOperationsNC_
+        {
+        }
+
+        [_System.Runtime.InteropServices.ComVisible(false)]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1715")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
+        [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1012")]
-        public abstract partial class VSClient : vsm.VSObject, VSClientOperations_, VSClientOperationsNC_
+        public abstract partial class VSUnityClient : vsm.VSObject, VSUnityClientOperations_, VSUnityClientOperationsNC_, vsm.network.VSClient
         {
             #region Slice operations
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+            public vsm.component.VSTransformPrx getTransform()
+            {
+                return getTransform(Ice.ObjectImpl.defaultCurrent);
+            }
+            [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+            public abstract vsm.component.VSTransformPrx getTransform(Ice.Current current__);
+
+            #endregion
+
+            #region Inherited Slice operations
+
             public vsm.network.ClientType getClientType()
             {
                 return getClientType(Ice.ObjectImpl.defaultCurrent);
             }
-            [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+
             public abstract vsm.network.ClientType getClientType(Ice.Current current__);
 
             #endregion
@@ -67,7 +93,8 @@ namespace vsm
             {
                 "::Ice::Object",
                 "::vsm::VSObject",
-                "::vsm::network::VSClient"
+                "::vsm::network::VSClient",
+                "::vsm::network::VSUnityClient"
             };
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
@@ -97,19 +124,19 @@ namespace vsm
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
             public override string ice_id()
             {
-                return ids__[2];
+                return ids__[3];
             }
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
             public override string ice_id(Ice.Current current__)
             {
-                return ids__[2];
+                return ids__[3];
             }
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
             public static new string ice_staticId()
             {
-                return ids__[2];
+                return ids__[3];
             }
 
             #endregion
@@ -118,19 +145,20 @@ namespace vsm
 
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public static Ice.DispatchStatus getClientType___(VSClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
+            public static Ice.DispatchStatus getTransform___(VSUnityClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
             {
-                checkMode__(Ice.OperationMode.Idempotent, current__.mode);
+                checkMode__(Ice.OperationMode.Normal, current__.mode);
                 inS__.istr().skipEmptyEncaps();
                 IceInternal.BasicStream os__ = inS__.ostr();
-                vsm.network.ClientType ret__ = obj__.getClientType(current__);
-                os__.writeByte((byte)ret__, 1);
+                vsm.component.VSTransformPrx ret__ = obj__.getTransform(current__);
+                vsm.component.VSTransformPrxHelper.write__(os__, ret__);
                 return Ice.DispatchStatus.DispatchOK;
             }
 
             private static string[] all__ =
             {
                 "getClientType",
+                "getTransform",
                 "ice_id",
                 "ice_ids",
                 "ice_isA",
@@ -150,21 +178,25 @@ namespace vsm
                 {
                     case 0:
                     {
-                        return getClientType___(this, inS__, current__);
+                        return vsm.network.VSClientDisp_.getClientType___(this, inS__, current__);
                     }
                     case 1:
                     {
-                        return ice_id___(this, inS__, current__);
+                        return getTransform___(this, inS__, current__);
                     }
                     case 2:
                     {
-                        return ice_ids___(this, inS__, current__);
+                        return ice_id___(this, inS__, current__);
                     }
                     case 3:
                     {
-                        return ice_isA___(this, inS__, current__);
+                        return ice_ids___(this, inS__, current__);
                     }
                     case 4:
+                    {
+                        return ice_isA___(this, inS__, current__);
+                    }
+                    case 5:
                     {
                         return ice_ping___(this, inS__, current__);
                     }
@@ -203,7 +235,7 @@ namespace vsm
             public override void write__(Ice.OutputStream outS__)
             {
                 Ice.MarshalException ex = new Ice.MarshalException();
-                ex.reason = "type vsm::network::VSClient was not generated with stream support";
+                ex.reason = "type vsm::network::VSUnityClient was not generated with stream support";
                 throw ex;
             }
 
@@ -211,7 +243,7 @@ namespace vsm
             public override void read__(Ice.InputStream inS__, bool rid__)
             {
                 Ice.MarshalException ex = new Ice.MarshalException();
-                ex.reason = "type vsm::network::VSClient was not generated with stream support";
+                ex.reason = "type vsm::network::VSUnityClient was not generated with stream support";
                 throw ex;
             }
 
@@ -587,6 +619,9 @@ namespace vsm
         public delegate void Callback_VSClient_getClientType(vsm.network.ClientType ret__);
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public delegate void Callback_VSUnityClient_getTransform(vsm.component.VSTransformPrx ret__);
+
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public delegate void Callback_VSServer_register();
     }
 }
@@ -596,7 +631,7 @@ namespace vsm
     namespace network
     {
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSClientPrx : vsm.VSObjectPrx
+        public interface VSClientPrx : Ice.ObjectPrx
         {
             vsm.network.ClientType getClientType();
             vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__);
@@ -608,6 +643,21 @@ namespace vsm
             Ice.AsyncResult begin_getClientType(_System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
 
             vsm.network.ClientType end_getClientType(Ice.AsyncResult r__);
+        }
+
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public interface VSUnityClientPrx : vsm.VSObjectPrx, vsm.network.VSClientPrx
+        {
+            vsm.component.VSTransformPrx getTransform();
+            vsm.component.VSTransformPrx getTransform(_System.Collections.Generic.Dictionary<string, string> context__);
+
+            Ice.AsyncResult<vsm.network.Callback_VSUnityClient_getTransform> begin_getTransform();
+            Ice.AsyncResult<vsm.network.Callback_VSUnityClient_getTransform> begin_getTransform(_System.Collections.Generic.Dictionary<string, string> ctx__);
+
+            Ice.AsyncResult begin_getTransform(Ice.AsyncCallback cb__, object cookie__);
+            Ice.AsyncResult begin_getTransform(_System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
+
+            vsm.component.VSTransformPrx end_getTransform(Ice.AsyncResult r__);
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
@@ -641,6 +691,18 @@ namespace vsm
         public interface VSClientOperationsNC_
         {
             vsm.network.ClientType getClientType();
+        }
+
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public interface VSUnityClientOperations_ : vsm.network.VSClientOperations_
+        {
+            vsm.component.VSTransformPrx getTransform(Ice.Current current__);
+        }
+
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public interface VSUnityClientOperationsNC_ : vsm.network.VSClientOperationsNC_
+        {
+            vsm.component.VSTransformPrx getTransform();
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
@@ -696,7 +758,7 @@ namespace vsm
                     }
                     catch(IceInternal.LocalExceptionWrapper ex__)
                     {
-                        handleExceptionWrapperRelaxed__(delBase__, ex__, true, ref cnt__);
+                        handleExceptionWrapper__(delBase__, ex__);
                     }
                     catch(Ice.LocalException ex__)
                     {
@@ -764,7 +826,7 @@ namespace vsm
                 }
                 try
                 {
-                    result__.prepare__(__getClientType_name, Ice.OperationMode.Idempotent, ctx__, explicitContext__);
+                    result__.prepare__(__getClientType_name, Ice.OperationMode.Normal, ctx__, explicitContext__);
                     IceInternal.BasicStream os__ = result__.ostr__;
                     os__.endWriteEncaps();
                     result__.send__(true);
@@ -908,13 +970,12 @@ namespace vsm
             public static readonly string[] ids__ =
             {
                 "::Ice::Object",
-                "::vsm::VSObject",
                 "::vsm::network::VSClient"
             };
 
             public static string ice_staticId()
             {
-                return ids__[2];
+                return ids__[1];
             }
 
             #endregion
@@ -942,6 +1003,423 @@ namespace vsm
                 if(proxy != null)
                 {
                     VSClientPrxHelper result = new VSClientPrxHelper();
+                    result.copyFrom__(proxy);
+                    return result;
+                }
+                return null;
+            }
+
+            #endregion
+        }
+
+        [_System.Runtime.InteropServices.ComVisible(false)]
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public sealed class VSUnityClientPrxHelper : Ice.ObjectPrxHelperBase, VSUnityClientPrx
+        {
+            #region Synchronous operations
+
+            public vsm.network.ClientType getClientType()
+            {
+                return getClientType(null, false);
+            }
+
+            public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
+            {
+                return getClientType(context__, true);
+            }
+
+            private vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__, bool explicitContext__)
+            {
+                if(explicitContext__ && context__ == null)
+                {
+                    context__ = emptyContext_;
+                }
+                int cnt__ = 0;
+                while(true)
+                {
+                    Ice.ObjectDel_ delBase__ = null;
+                    try
+                    {
+                        checkTwowayOnly__("getClientType");
+                        delBase__ = getDelegate__(false);
+                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        return del__.getClientType(context__);
+                    }
+                    catch(IceInternal.LocalExceptionWrapper ex__)
+                    {
+                        handleExceptionWrapper__(delBase__, ex__);
+                    }
+                    catch(Ice.LocalException ex__)
+                    {
+                        handleException__(delBase__, ex__, true, ref cnt__);
+                    }
+                }
+            }
+
+            public vsm.component.VSTransformPrx getTransform()
+            {
+                return getTransform(null, false);
+            }
+
+            public vsm.component.VSTransformPrx getTransform(_System.Collections.Generic.Dictionary<string, string> context__)
+            {
+                return getTransform(context__, true);
+            }
+
+            private vsm.component.VSTransformPrx getTransform(_System.Collections.Generic.Dictionary<string, string> context__, bool explicitContext__)
+            {
+                if(explicitContext__ && context__ == null)
+                {
+                    context__ = emptyContext_;
+                }
+                int cnt__ = 0;
+                while(true)
+                {
+                    Ice.ObjectDel_ delBase__ = null;
+                    try
+                    {
+                        checkTwowayOnly__("getTransform");
+                        delBase__ = getDelegate__(false);
+                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        return del__.getTransform(context__);
+                    }
+                    catch(IceInternal.LocalExceptionWrapper ex__)
+                    {
+                        handleExceptionWrapper__(delBase__, ex__);
+                    }
+                    catch(Ice.LocalException ex__)
+                    {
+                        handleException__(delBase__, ex__, true, ref cnt__);
+                    }
+                }
+            }
+
+            #endregion
+
+            #region Asynchronous operations
+
+            public Ice.AsyncResult<vsm.network.Callback_VSClient_getClientType> begin_getClientType()
+            {
+                return begin_getClientType(null, false, null, null);
+            }
+
+            public Ice.AsyncResult<vsm.network.Callback_VSClient_getClientType> begin_getClientType(_System.Collections.Generic.Dictionary<string, string> ctx__)
+            {
+                return begin_getClientType(ctx__, true, null, null);
+            }
+
+            public Ice.AsyncResult begin_getClientType(Ice.AsyncCallback cb__, object cookie__)
+            {
+                return begin_getClientType(null, false, cb__, cookie__);
+            }
+
+            public Ice.AsyncResult begin_getClientType(_System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__)
+            {
+                return begin_getClientType(ctx__, true, cb__, cookie__);
+            }
+
+            private const string __getClientType_name = "getClientType";
+
+            public vsm.network.ClientType end_getClientType(Ice.AsyncResult r__)
+            {
+                IceInternal.OutgoingAsync outAsync__ = (IceInternal.OutgoingAsync)r__;
+                IceInternal.OutgoingAsync.check__(outAsync__, this, __getClientType_name);
+                if(!outAsync__.wait__())
+                {
+                    try
+                    {
+                        outAsync__.throwUserException__();
+                    }
+                    catch(Ice.UserException ex__)
+                    {
+                        throw new Ice.UnknownUserException(ex__.ice_name(), ex__);
+                    }
+                }
+                vsm.network.ClientType ret__;
+                IceInternal.BasicStream is__ = outAsync__.istr__;
+                is__.startReadEncaps();
+                ret__ = (vsm.network.ClientType)is__.readByte(1);
+                is__.endReadEncaps();
+                return ret__;
+            }
+
+            private Ice.AsyncResult<vsm.network.Callback_VSClient_getClientType> begin_getClientType(_System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            {
+                checkAsyncTwowayOnly__(__getClientType_name);
+                IceInternal.TwowayOutgoingAsync<vsm.network.Callback_VSClient_getClientType> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.network.Callback_VSClient_getClientType>(this, __getClientType_name, getClientType_completed__, cookie__);
+                if(cb__ != null)
+                {
+                    result__.whenCompletedWithAsyncCallback(cb__);
+                }
+                try
+                {
+                    result__.prepare__(__getClientType_name, Ice.OperationMode.Normal, ctx__, explicitContext__);
+                    IceInternal.BasicStream os__ = result__.ostr__;
+                    os__.endWriteEncaps();
+                    result__.send__(true);
+                }
+                catch(Ice.LocalException ex__)
+                {
+                    result__.exceptionAsync__(ex__);
+                }
+                return result__;
+            }
+
+            private void getClientType_completed__(Ice.AsyncResult r__, vsm.network.Callback_VSClient_getClientType cb__, Ice.ExceptionCallback excb__)
+            {
+                vsm.network.ClientType ret__;
+                try
+                {
+                    ret__ = end_getClientType(r__);
+                }
+                catch(Ice.Exception ex__)
+                {
+                    if(excb__ != null)
+                    {
+                        excb__(ex__);
+                    }
+                    return;
+                }
+                if(cb__ != null)
+                {
+                    cb__(ret__);
+                }
+            }
+
+            public Ice.AsyncResult<vsm.network.Callback_VSUnityClient_getTransform> begin_getTransform()
+            {
+                return begin_getTransform(null, false, null, null);
+            }
+
+            public Ice.AsyncResult<vsm.network.Callback_VSUnityClient_getTransform> begin_getTransform(_System.Collections.Generic.Dictionary<string, string> ctx__)
+            {
+                return begin_getTransform(ctx__, true, null, null);
+            }
+
+            public Ice.AsyncResult begin_getTransform(Ice.AsyncCallback cb__, object cookie__)
+            {
+                return begin_getTransform(null, false, cb__, cookie__);
+            }
+
+            public Ice.AsyncResult begin_getTransform(_System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__)
+            {
+                return begin_getTransform(ctx__, true, cb__, cookie__);
+            }
+
+            private const string __getTransform_name = "getTransform";
+
+            public vsm.component.VSTransformPrx end_getTransform(Ice.AsyncResult r__)
+            {
+                IceInternal.OutgoingAsync outAsync__ = (IceInternal.OutgoingAsync)r__;
+                IceInternal.OutgoingAsync.check__(outAsync__, this, __getTransform_name);
+                if(!outAsync__.wait__())
+                {
+                    try
+                    {
+                        outAsync__.throwUserException__();
+                    }
+                    catch(Ice.UserException ex__)
+                    {
+                        throw new Ice.UnknownUserException(ex__.ice_name(), ex__);
+                    }
+                }
+                vsm.component.VSTransformPrx ret__;
+                IceInternal.BasicStream is__ = outAsync__.istr__;
+                is__.startReadEncaps();
+                ret__ = vsm.component.VSTransformPrxHelper.read__(is__);
+                is__.endReadEncaps();
+                return ret__;
+            }
+
+            private Ice.AsyncResult<vsm.network.Callback_VSUnityClient_getTransform> begin_getTransform(_System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            {
+                checkAsyncTwowayOnly__(__getTransform_name);
+                IceInternal.TwowayOutgoingAsync<vsm.network.Callback_VSUnityClient_getTransform> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.network.Callback_VSUnityClient_getTransform>(this, __getTransform_name, getTransform_completed__, cookie__);
+                if(cb__ != null)
+                {
+                    result__.whenCompletedWithAsyncCallback(cb__);
+                }
+                try
+                {
+                    result__.prepare__(__getTransform_name, Ice.OperationMode.Normal, ctx__, explicitContext__);
+                    IceInternal.BasicStream os__ = result__.ostr__;
+                    os__.endWriteEncaps();
+                    result__.send__(true);
+                }
+                catch(Ice.LocalException ex__)
+                {
+                    result__.exceptionAsync__(ex__);
+                }
+                return result__;
+            }
+
+            private void getTransform_completed__(Ice.AsyncResult r__, vsm.network.Callback_VSUnityClient_getTransform cb__, Ice.ExceptionCallback excb__)
+            {
+                vsm.component.VSTransformPrx ret__;
+                try
+                {
+                    ret__ = end_getTransform(r__);
+                }
+                catch(Ice.Exception ex__)
+                {
+                    if(excb__ != null)
+                    {
+                        excb__(ex__);
+                    }
+                    return;
+                }
+                if(cb__ != null)
+                {
+                    cb__(ret__);
+                }
+            }
+
+            #endregion
+
+            #region Checked and unchecked cast operations
+
+            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b)
+            {
+                if(b == null)
+                {
+                    return null;
+                }
+                VSUnityClientPrx r = b as VSUnityClientPrx;
+                if((r == null) && b.ice_isA(ice_staticId()))
+                {
+                    VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                    h.copyFrom__(b);
+                    r = h;
+                }
+                return r;
+            }
+
+            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b, _System.Collections.Generic.Dictionary<string, string> ctx)
+            {
+                if(b == null)
+                {
+                    return null;
+                }
+                VSUnityClientPrx r = b as VSUnityClientPrx;
+                if((r == null) && b.ice_isA(ice_staticId(), ctx))
+                {
+                    VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                    h.copyFrom__(b);
+                    r = h;
+                }
+                return r;
+            }
+
+            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b, string f)
+            {
+                if(b == null)
+                {
+                    return null;
+                }
+                Ice.ObjectPrx bb = b.ice_facet(f);
+                try
+                {
+                    if(bb.ice_isA(ice_staticId()))
+                    {
+                        VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                        h.copyFrom__(bb);
+                        return h;
+                    }
+                }
+                catch(Ice.FacetNotExistException)
+                {
+                }
+                return null;
+            }
+
+            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b, string f, _System.Collections.Generic.Dictionary<string, string> ctx)
+            {
+                if(b == null)
+                {
+                    return null;
+                }
+                Ice.ObjectPrx bb = b.ice_facet(f);
+                try
+                {
+                    if(bb.ice_isA(ice_staticId(), ctx))
+                    {
+                        VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                        h.copyFrom__(bb);
+                        return h;
+                    }
+                }
+                catch(Ice.FacetNotExistException)
+                {
+                }
+                return null;
+            }
+
+            public static VSUnityClientPrx uncheckedCast(Ice.ObjectPrx b)
+            {
+                if(b == null)
+                {
+                    return null;
+                }
+                VSUnityClientPrx r = b as VSUnityClientPrx;
+                if(r == null)
+                {
+                    VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                    h.copyFrom__(b);
+                    r = h;
+                }
+                return r;
+            }
+
+            public static VSUnityClientPrx uncheckedCast(Ice.ObjectPrx b, string f)
+            {
+                if(b == null)
+                {
+                    return null;
+                }
+                Ice.ObjectPrx bb = b.ice_facet(f);
+                VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                h.copyFrom__(bb);
+                return h;
+            }
+
+            public static readonly string[] ids__ =
+            {
+                "::Ice::Object",
+                "::vsm::VSObject",
+                "::vsm::network::VSClient",
+                "::vsm::network::VSUnityClient"
+            };
+
+            public static string ice_staticId()
+            {
+                return ids__[3];
+            }
+
+            #endregion
+
+            #region Marshaling support
+
+            protected override Ice.ObjectDelM_ createDelegateM__()
+            {
+                return new VSUnityClientDelM_();
+            }
+
+            protected override Ice.ObjectDelD_ createDelegateD__()
+            {
+                return new VSUnityClientDelD_();
+            }
+
+            public static void write__(IceInternal.BasicStream os__, VSUnityClientPrx v__)
+            {
+                os__.writeProxy(v__);
+            }
+
+            public static VSUnityClientPrx read__(IceInternal.BasicStream is__)
+            {
+                Ice.ObjectPrx proxy = is__.readProxy();
+                if(proxy != null)
+                {
+                    VSUnityClientPrxHelper result = new VSUnityClientPrxHelper();
                     result.copyFrom__(proxy);
                     return result;
                 }
@@ -1247,9 +1725,15 @@ namespace vsm
     namespace network
     {
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSClientDel_ : vsm.VSObjectDel_
+        public interface VSClientDel_ : Ice.ObjectDel_
         {
             vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__);
+        }
+
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public interface VSUnityClientDel_ : vsm.VSObjectDel_, vsm.network.VSClientDel_
+        {
+            vsm.component.VSTransformPrx getTransform(_System.Collections.Generic.Dictionary<string, string> context__);
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
@@ -1270,7 +1754,7 @@ namespace vsm
         {
             public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
             {
-                IceInternal.Outgoing og__ = handler__.getOutgoing("getClientType", Ice.OperationMode.Idempotent, context__);
+                IceInternal.Outgoing og__ = handler__.getOutgoing("getClientType", Ice.OperationMode.Normal, context__);
                 try
                 {
                     bool ok__ = og__.invoke();
@@ -1291,6 +1775,85 @@ namespace vsm
                         is__.startReadEncaps();
                         vsm.network.ClientType ret__;
                         ret__ = (vsm.network.ClientType)is__.readByte(1);
+                        is__.endReadEncaps();
+                        return ret__;
+                    }
+                    catch(Ice.LocalException ex__)
+                    {
+                        throw new IceInternal.LocalExceptionWrapper(ex__, false);
+                    }
+                }
+                finally
+                {
+                    handler__.reclaimOutgoing(og__);
+                }
+            }
+        }
+
+        [_System.Runtime.InteropServices.ComVisible(false)]
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public sealed class VSUnityClientDelM_ : Ice.ObjectDelM_, VSUnityClientDel_
+        {
+            public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
+            {
+                IceInternal.Outgoing og__ = handler__.getOutgoing("getClientType", Ice.OperationMode.Normal, context__);
+                try
+                {
+                    bool ok__ = og__.invoke();
+                    try
+                    {
+                        if(!ok__)
+                        {
+                            try
+                            {
+                                og__.throwUserException();
+                            }
+                            catch(Ice.UserException ex__)
+                            {
+                                throw new Ice.UnknownUserException(ex__.ice_name(), ex__);
+                            }
+                        }
+                        IceInternal.BasicStream is__ = og__.istr();
+                        is__.startReadEncaps();
+                        vsm.network.ClientType ret__;
+                        ret__ = (vsm.network.ClientType)is__.readByte(1);
+                        is__.endReadEncaps();
+                        return ret__;
+                    }
+                    catch(Ice.LocalException ex__)
+                    {
+                        throw new IceInternal.LocalExceptionWrapper(ex__, false);
+                    }
+                }
+                finally
+                {
+                    handler__.reclaimOutgoing(og__);
+                }
+            }
+
+            public vsm.component.VSTransformPrx getTransform(_System.Collections.Generic.Dictionary<string, string> context__)
+            {
+                IceInternal.Outgoing og__ = handler__.getOutgoing("getTransform", Ice.OperationMode.Normal, context__);
+                try
+                {
+                    bool ok__ = og__.invoke();
+                    try
+                    {
+                        if(!ok__)
+                        {
+                            try
+                            {
+                                og__.throwUserException();
+                            }
+                            catch(Ice.UserException ex__)
+                            {
+                                throw new Ice.UnknownUserException(ex__.ice_name(), ex__);
+                            }
+                        }
+                        IceInternal.BasicStream is__ = og__.istr();
+                        is__.startReadEncaps();
+                        vsm.component.VSTransformPrx ret__;
+                        ret__ = vsm.component.VSTransformPrxHelper.read__(is__);
                         is__.endReadEncaps();
                         return ret__;
                     }
@@ -1370,7 +1933,7 @@ namespace vsm
             public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
             {
                 Ice.Current current__ = new Ice.Current();
-                initCurrent__(ref current__, "getClientType", Ice.OperationMode.Idempotent, context__);
+                initCurrent__(ref current__, "getClientType", Ice.OperationMode.Normal, context__);
                 vsm.network.ClientType result__ = vsm.network.ClientType.UNITY;
                 IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
                 {
@@ -1384,6 +1947,101 @@ namespace vsm
                         throw new Ice.OperationNotExistException(current__.id, current__.facet, current__.operation);
                     }
                     result__ = servant__.getClientType(current__);
+                    return Ice.DispatchStatus.DispatchOK;
+                };
+                IceInternal.Direct direct__ = null;
+                try
+                {
+                    direct__ = new IceInternal.Direct(current__, run__);
+                    try
+                    {
+                        Ice.DispatchStatus status__ = direct__.servant().collocDispatch__(direct__);
+                        _System.Diagnostics.Debug.Assert(status__ == Ice.DispatchStatus.DispatchOK);
+                    }
+                    finally
+                    {
+                        direct__.destroy();
+                    }
+                }
+                catch(Ice.SystemException)
+                {
+                    throw;
+                }
+                catch(_System.Exception ex__)
+                {
+                    IceInternal.LocalExceptionWrapper.throwWrapper(ex__);
+                }
+                return result__;
+            }
+        }
+
+        [_System.Runtime.InteropServices.ComVisible(false)]
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public sealed class VSUnityClientDelD_ : Ice.ObjectDelD_, VSUnityClientDel_
+        {
+            [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031")]
+            public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
+            {
+                Ice.Current current__ = new Ice.Current();
+                initCurrent__(ref current__, "getClientType", Ice.OperationMode.Normal, context__);
+                vsm.network.ClientType result__ = vsm.network.ClientType.UNITY;
+                IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
+                {
+                    VSUnityClient servant__ = null;
+                    try
+                    {
+                        servant__ = (VSUnityClient)obj__;
+                    }
+                    catch(_System.InvalidCastException)
+                    {
+                        throw new Ice.OperationNotExistException(current__.id, current__.facet, current__.operation);
+                    }
+                    result__ = servant__.getClientType(current__);
+                    return Ice.DispatchStatus.DispatchOK;
+                };
+                IceInternal.Direct direct__ = null;
+                try
+                {
+                    direct__ = new IceInternal.Direct(current__, run__);
+                    try
+                    {
+                        Ice.DispatchStatus status__ = direct__.servant().collocDispatch__(direct__);
+                        _System.Diagnostics.Debug.Assert(status__ == Ice.DispatchStatus.DispatchOK);
+                    }
+                    finally
+                    {
+                        direct__.destroy();
+                    }
+                }
+                catch(Ice.SystemException)
+                {
+                    throw;
+                }
+                catch(_System.Exception ex__)
+                {
+                    IceInternal.LocalExceptionWrapper.throwWrapper(ex__);
+                }
+                return result__;
+            }
+
+            [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031")]
+            public vsm.component.VSTransformPrx getTransform(_System.Collections.Generic.Dictionary<string, string> context__)
+            {
+                Ice.Current current__ = new Ice.Current();
+                initCurrent__(ref current__, "getTransform", Ice.OperationMode.Normal, context__);
+                vsm.component.VSTransformPrx result__ = null;
+                IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
+                {
+                    VSUnityClient servant__ = null;
+                    try
+                    {
+                        servant__ = (VSUnityClient)obj__;
+                    }
+                    catch(_System.InvalidCastException)
+                    {
+                        throw new Ice.OperationNotExistException(current__.id, current__.facet, current__.operation);
+                    }
+                    result__ = servant__.getTransform(current__);
                     return Ice.DispatchStatus.DispatchOK;
                 };
                 IceInternal.Direct direct__ = null;
@@ -1483,5 +2141,162 @@ namespace vsm
 {
     namespace network
     {
+        [_System.Runtime.InteropServices.ComVisible(false)]
+        [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
+        public abstract class VSClientDisp_ : Ice.ObjectImpl, VSClient
+        {
+            #region Slice operations
+
+            public vsm.network.ClientType getClientType()
+            {
+                return getClientType(Ice.ObjectImpl.defaultCurrent);
+            }
+
+            public abstract vsm.network.ClientType getClientType(Ice.Current current__);
+
+            #endregion
+
+            #region Slice type-related members
+
+            public static new readonly string[] ids__ = 
+            {
+                "::Ice::Object",
+                "::vsm::network::VSClient"
+            };
+
+            public override bool ice_isA(string s)
+            {
+                return _System.Array.BinarySearch(ids__, s, IceUtilInternal.StringUtil.OrdinalStringComparer) >= 0;
+            }
+
+            public override bool ice_isA(string s, Ice.Current current__)
+            {
+                return _System.Array.BinarySearch(ids__, s, IceUtilInternal.StringUtil.OrdinalStringComparer) >= 0;
+            }
+
+            public override string[] ice_ids()
+            {
+                return ids__;
+            }
+
+            public override string[] ice_ids(Ice.Current current__)
+            {
+                return ids__;
+            }
+
+            public override string ice_id()
+            {
+                return ids__[1];
+            }
+
+            public override string ice_id(Ice.Current current__)
+            {
+                return ids__[1];
+            }
+
+            public static new string ice_staticId()
+            {
+                return ids__[1];
+            }
+
+            #endregion
+
+            #region Operation dispatch
+
+            [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+            public static Ice.DispatchStatus getClientType___(VSClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
+            {
+                checkMode__(Ice.OperationMode.Normal, current__.mode);
+                inS__.istr().skipEmptyEncaps();
+                IceInternal.BasicStream os__ = inS__.ostr();
+                vsm.network.ClientType ret__ = obj__.getClientType(current__);
+                os__.writeByte((byte)ret__, 1);
+                return Ice.DispatchStatus.DispatchOK;
+            }
+
+            private static string[] all__ =
+            {
+                "getClientType",
+                "ice_id",
+                "ice_ids",
+                "ice_isA",
+                "ice_ping"
+            };
+
+            public override Ice.DispatchStatus dispatch__(IceInternal.Incoming inS__, Ice.Current current__)
+            {
+                int pos = _System.Array.BinarySearch(all__, current__.operation, IceUtilInternal.StringUtil.OrdinalStringComparer);
+                if(pos < 0)
+                {
+                    throw new Ice.OperationNotExistException(current__.id, current__.facet, current__.operation);
+                }
+
+                switch(pos)
+                {
+                    case 0:
+                    {
+                        return getClientType___(this, inS__, current__);
+                    }
+                    case 1:
+                    {
+                        return ice_id___(this, inS__, current__);
+                    }
+                    case 2:
+                    {
+                        return ice_ids___(this, inS__, current__);
+                    }
+                    case 3:
+                    {
+                        return ice_isA___(this, inS__, current__);
+                    }
+                    case 4:
+                    {
+                        return ice_ping___(this, inS__, current__);
+                    }
+                }
+
+                _System.Diagnostics.Debug.Assert(false);
+                throw new Ice.OperationNotExistException(current__.id, current__.facet, current__.operation);
+            }
+
+            #endregion
+
+            #region Marshaling support
+
+            public override void write__(IceInternal.BasicStream os__)
+            {
+                os__.writeTypeId(ice_staticId());
+                os__.startWriteSlice();
+                os__.endWriteSlice();
+                base.write__(os__);
+            }
+
+            public override void read__(IceInternal.BasicStream is__, bool rid__)
+            {
+                if(rid__)
+                {
+                    /* string myId = */ is__.readTypeId();
+                }
+                is__.startReadSlice();
+                is__.endReadSlice();
+                base.read__(is__, true);
+            }
+
+            public override void write__(Ice.OutputStream outS__)
+            {
+                Ice.MarshalException ex = new Ice.MarshalException();
+                ex.reason = "type vsm::network::VSClient was not generated with stream support";
+                throw ex;
+            }
+
+            public override void read__(Ice.InputStream inS__, bool rid__)
+            {
+                Ice.MarshalException ex = new Ice.MarshalException();
+                ex.reason = "type vsm::network::VSClient was not generated with stream support";
+                throw ex;
+            }
+
+            #endregion
+        }
     }
 }

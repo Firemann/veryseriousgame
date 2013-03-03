@@ -20,7 +20,7 @@
 
 package vsm.network;
 
-public interface VSClientPrx extends vsm.VSObjectPrx
+public interface VSClientPrx extends Ice.ObjectPrx
 {
     public ClientType getClientType();
 

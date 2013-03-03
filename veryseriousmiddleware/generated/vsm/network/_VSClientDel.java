@@ -20,7 +20,7 @@
 
 package vsm.network;
 
-public interface _VSClientDel extends vsm._VSObjectDel
+public interface _VSClientDel extends Ice._ObjectDel
 {
     ClientType getClientType(java.util.Map<String, String> __ctx)
         throws IceInternal.LocalExceptionWrapper;
