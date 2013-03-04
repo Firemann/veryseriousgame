@@ -22,9 +22,7 @@ public class UnityView extends JFrame {
 
 	VSUnityClientPrx unityClientPrx;
 	VSTransformPrx transformPrx;
-	public UnityView(VSUnityClientPrx unityClientPrx) {
-		this.unityClientPrx = unityClientPrx;
-		transformPrx = unityClientPrx.getTransform();
+	public UnityView() {
 		
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
@@ -68,6 +66,11 @@ public class UnityView extends JFrame {
 		this.setPreferredSize(new Dimension(800, 600));
 		this.setVisible(true);
 		this.pack();
+	}
+	public void setProxy(VSUnityClientPrx client) {
+		this.unityClientPrx = client;
+		transformPrx = unityClientPrx.getTransform();
+		System.out.println(transformPrx.ice_getIdentity().name);
 	}
 	
 }

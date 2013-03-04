@@ -2,6 +2,7 @@ package vsm;
 
 import java.lang.reflect.InvocationTargetException;
 
+import unityView.UnityView;
 import vsm.network.VSServer;
 import vsm.network.VSServerI;
 import Ice.Application;
@@ -60,7 +61,7 @@ public class VSMiddleware extends Application {
 		}
 		
 		// Creating all the objects the client will use
-		VSServer server = new VSServerI();
+		VSServer server = new VSServerI(new UnityView());
 		adapter.add(server, communicator().stringToIdentity("VerySeriousMiddleware"));
 		
 		// Allow clients requests and wait until we are done

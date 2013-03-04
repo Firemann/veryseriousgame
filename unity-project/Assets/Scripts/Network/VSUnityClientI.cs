@@ -23,6 +23,11 @@ namespace vsm.network
             Identity myId = VSNetworkManager.communicator().stringToIdentity(System.Guid.NewGuid().ToString());
             VSNetworkManager.adapter.add(vsTransform, myId);
             return VSTransformPrxHelper.checkedCast(VSNetworkManager.adapter.createProxy(myId));
+            //ObjectAdapter adapter = Ice.Application.communicator().createObjectAdapterWithEndpoints("UnityTransform", "default -p 10002");
+            //adapter.add(vsTransform, Ice.Application.communicator().stringToIdentity("UnityTransform"));
+            //adapter.activate();
+            //return VSTransformPrxHelper.uncheckedCast(
+            //    adapter.createProxy(Ice.Application.communicator().stringToIdentity("UnityTransform")));
         }
 
         public override ClientType getClientType(Ice.Current current__)

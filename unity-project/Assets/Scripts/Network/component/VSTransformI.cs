@@ -14,7 +14,8 @@ namespace vsm.component
 
         public override void translate(VSVector3 translation, Ice.Current current__)
         {
-            unityTransform.Translate(VSComponentTools.toUnityVector3(translation));
+            MonoBehaviour.print("Transformation !");
+            //unityTransform.Translate(VSComponentTools.toUnityVector3(translation));
         }
 
         public override void rotate(VSVector3 translation, Ice.Current current__)
