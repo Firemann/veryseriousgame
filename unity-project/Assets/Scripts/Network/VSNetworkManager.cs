@@ -24,7 +24,7 @@ namespace vsm.network
 
         public override int run(string[] args)
         {
-            Ice.ObjectPrx obj = communicator().stringToProxy("VerySeriousMiddleware:default -p 10000").ice_twoway().ice_timeout(-1).ice_secure(false);
+            Ice.ObjectPrx obj = communicator().stringToProxy("VerySeriousMiddleware:default -p 10000");
 
             VSServerPrx server = VSServerPrxHelper.checkedCast(obj);
             if (server == null)
