@@ -28,8 +28,6 @@ public class VSServerI extends VSServer {
 		if(clientsList.contains(client))
 			throw new AlreadyConnectedException();
 		clientsList.add(client);
-		System.out.println(client);
-		System.out.println("New Client connected : " + client.getClientType());
 		if(client.getClientType() == ClientType.UNITY) {
 			final VSUnityClientPrx azerty = VSUnityClientPrxHelper.checkedCast(client);
 			SwingUtilities.invokeLater(new Runnable() {

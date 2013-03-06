@@ -110,9 +110,7 @@ public class UnityView extends JFrame {
 	}
 	public void setProxy(VSUnityClientPrx client) {
 		this.unityClientPrx = client;
-		System.out.println(client.ice_getIdentity().name);
 		transformPrx = unityClientPrx.getTransform();
-		System.out.println(transformPrx.ice_getIdentity().name);
 	}
 	
 }
