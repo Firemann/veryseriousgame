@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour {
 	private int serverPort = 25000;
 	
 	public void Start() {
+        Loom l = Loom.Current;
 	}
 	
 	public void OnGUI() {

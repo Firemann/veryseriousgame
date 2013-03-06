@@ -19,6 +19,8 @@ import vsm.network.VSUnityClientPrx;
 
 @SuppressWarnings("serial")
 public class UnityView extends JFrame {
+	
+	private final static float MOVE = 20.f;
 
 	VSUnityClientPrx unityClientPrx;
 	VSTransformPrx transformPrx;
@@ -48,7 +50,7 @@ public class UnityView extends JFrame {
 					
 					@Override
 					public void run() {
-						transformPrx.translate(new VSVector3(0, 0, 20f));
+						transformPrx.translate(new VSVector3(0, 0, MOVE));
 					}
 				});
 			}
@@ -56,10 +58,49 @@ public class UnityView extends JFrame {
 		mainPanel.add(upButton);
 		mainPanel.add(new JPanel());
 		JButton leftButton = new JButton("Left");
+		leftButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						transformPrx.translate(new VSVector3(-MOVE, 0, 0));
+					}
+				});
+			}
+		});
 		mainPanel.add(leftButton);
 		JButton downButton = new JButton("Down");
+		downButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						transformPrx.translate(new VSVector3(0, 0, -MOVE));
+					}
+				});
+			}
+		});
 		mainPanel.add(downButton);
 		JButton rightButton = new JButton("Right");
+		rightButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						transformPrx.translate(new VSVector3(MOVE, 0, 0));
+					}
+				});
+			}
+		});
 		mainPanel.add(rightButton);
 		
 		this.setContentPane(mainPanel);
@@ -69,6 +110,7 @@ public class UnityView extends JFrame {
 	}
 	public void setProxy(VSUnityClientPrx client) {
 		this.unityClientPrx = client;
+		System.out.println(client.ice_getIdentity().name);
 		transformPrx = unityClientPrx.getTransform();
 		System.out.println(transformPrx.ice_getIdentity().name);
 	}

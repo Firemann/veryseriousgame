@@ -32,13 +32,15 @@ namespace vsm.network
             MonoBehaviour.print("Server link ok");
 
             adapter = communicator().createObjectAdapterWithEndpoints("Unity", "default -p 10001");
-            VSClient client = new VSUnityClientI(ClientType.UNITY, unityTransform);      
+            VSClient client = new VSUnityClientI(ClientType.UNITY, unityTransform);
             adapter.add(client, communicator().stringToIdentity("Unity"));
             adapter.activate();
             VSClientPrx clientPrx = VSClientPrxHelper.uncheckedCast(
                 adapter.createProxy(communicator().stringToIdentity("Unity")));
             server.register(clientPrx);
             MonoBehaviour.print("Client Registered");
+
+            communicator().waitForShutdown();
 
             return 0;
         }

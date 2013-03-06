@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using vsm.network;
+using System.Threading;
 
 public class StartNetwork : MonoBehaviour {
 	
@@ -65,7 +66,11 @@ public class StartNetwork : MonoBehaviour {
 			yield return new WaitForSeconds(3);
 		}
 		GameObject cubyInst = Network.Instantiate(cuby, spawn.transform.position, Quaternion.identity, 0) as GameObject;
-        new VSNetworkManager(cubyInst.transform).main(new string[0]);
+        Transform t = cubyInst.transform;
+        Loom.RunAsync(() =>
+        {
+            new VSNetworkManager(t).main(new string[0]);
+        });
 	}
 	
 }
