@@ -10,7 +10,7 @@ private var disable : boolean;
 
 function Update () {
 	//Crouching.
-	if (Input.GetKeyDown(KeyCode.C)){
+	if (Input.GetMouseButton(1)){
 		if(!disable){
 			if (globalCrouchBlend < 0.5){
 				globalCrouchBlendTarget = 1.0;

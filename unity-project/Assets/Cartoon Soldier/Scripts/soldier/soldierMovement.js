@@ -110,7 +110,7 @@ function Update () {
 		if(Input.GetAxis("Vertical") < 0){//Slow down going backwards;
 			targetForwardSpeed *= 0.5;
 		}
-		if(Input.GetKey(KeyCode.LeftShift)){//Sprint with left shift;
+		if(Input.GetMouseButton(0)){//Sprint with left shift;
 			targetForwardSpeed *= 1.5;
 			targetStrafeSpeed *= 1.5;
 		}
