@@ -44,15 +44,62 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\autoDestroy.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\bulletHoleProperty.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\externalCamera.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\fadeParticles.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\flyingSpark.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\game.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\health.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\laserSight\laserDust.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\laserSight\laserLine.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\laserSight\laserPoint.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\laserSight\laserSight.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\particleAutoDestroy.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\platform.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\sentryGun\sentryGun.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\sentryGun\spinningTurret.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\shadow.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\spark.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\Misc\triggerChildrenCollider.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\bulletCase.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\bulletCaseGenerator.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\bulletHole.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\bulletHoleHeat.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\bulletTrace.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\bulletTraceGenerator.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\dustCloud.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\dustCloudGenerator.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\gun.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\gunSelector.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\muzzleFlash.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\guns\muzzleFlashGenerator.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\ik\ikArmController.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\ik\inverseKinematics.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\crosshair.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\crouchController.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\skeletonToCharacter.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\smoothWorldPosition.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\soldierAim.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\soldierAnimation.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\soldierCamera.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\soldierLOD.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\soldierMovement.js" />
+     <Compile Include="Assets\Cartoon Soldier\Scripts\soldier\weaponController.js" />
      <Compile Include="Assets\Destroyed_city_FREE\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
      <Compile Include="Assets\Destroyed_city_FREE\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
      <None Include="Assets\Destroyed_city_FREE\Destroyed_city_FREE_Info.txt" />
      <None Include="Assets\Librairies\Ice.xml" />
      <None Include="Assets\Destroyed_city_FREE\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+     <None Include="Assets\Cartoon Soldier\Readme.txt" />
      <None Include="Assets\Destroyed_city_FREE\Shaders\AlphaTest-DiffuseDoubleSide.shader" />
  <Reference Include="Ice">
  <HintPath>Assets\Librairies\Ice.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{71566F79-0A21-1565-11AC-AF1647BC3132}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
