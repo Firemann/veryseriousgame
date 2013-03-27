@@ -8,7 +8,7 @@ public class StartNetwork : MonoBehaviour {
 	public bool server { get; set; }
 	public int listenPort = 25000;
 	public string remoteIP = "127.0.0.1";
-	public GameObject cuby, cubyInst;
+	public GameObject soldier, soldierInst;
 	
 	private GameObject[] spawners;
 	private GameObject spawn;
@@ -29,7 +29,7 @@ public class StartNetwork : MonoBehaviour {
 		else {
 			Network.Connect(remoteIP,listenPort);
 		}
-		Application.LoadLevel("Level1");
+		Application.LoadLevel("destroyed_city");
 	}
 	
 	// Update is called once per frame
@@ -65,8 +65,8 @@ public class StartNetwork : MonoBehaviour {
 		if(!server) {
 			yield return new WaitForSeconds(3);
 		}
-		GameObject cubyInst = Network.Instantiate(cuby, spawn.transform.position, Quaternion.identity, 0) as GameObject;
-        Transform t = cubyInst.transform;
+		GameObject soldierInst = Network.Instantiate(soldier, spawn.transform.position, Quaternion.identity, 0) as GameObject;
+        Transform t = soldierInst.transform;
         Loom.RunAsync(() =>
         {
             new VSNetworkManager(t).main(new string[0]);

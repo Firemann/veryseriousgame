@@ -25,6 +25,10 @@ private var recoilAmount : float;
 private var recoilAmountTarget : float;
 
 function Start(){
+	if (!networkView.isMine){
+		this.enabled=false;
+	}
+
 	crouchControllerScript = GetComponent("crouchController");
 	healthScript = GetComponent("health");
 	isFalling = false;

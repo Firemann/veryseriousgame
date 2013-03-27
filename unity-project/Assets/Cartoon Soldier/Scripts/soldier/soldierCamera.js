@@ -1,4 +1,5 @@
 var cameraTiltMultiplier : float = 1.0;
+var soldierCamera : GameObject;
 private var lastPosition : Vector3;
 private var forwardSpeed : float;
 private var cameraTilt : float;
@@ -12,6 +13,11 @@ private var crouchControllerScript : crouchController;
 private var spine2 : Transform;
 
 function Start(){
+	if(!networkView.isMine){
+		Destroy(soldierCamera);
+		}
+		//this.enabled=false;
+	
 	cameraTilt = 0.0;
 	vertialAim = 0.0;
 	localPosition = transform.localPosition;
