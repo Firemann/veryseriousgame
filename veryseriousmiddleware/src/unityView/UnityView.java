@@ -12,18 +12,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import vsm.VSDirection;
 import vsm.VSMiddleware;
-import vsm.VSVector3;
-import vsm.component.VSTransformPrx;
-import vsm.network.VSUnityClientPrx;
+import vsm.unity.VSSoldierPrx;
+import vsm.unity.VSUnityClientPrx;
 
 @SuppressWarnings("serial")
 public class UnityView extends JFrame {
 	
-	private final static float MOVE = 20.f;
-
 	VSUnityClientPrx unityClientPrx;
-	VSTransformPrx transformPrx;
+	VSSoldierPrx soldierPrx;
 	public UnityView() {
 		
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -50,7 +48,7 @@ public class UnityView extends JFrame {
 					
 					@Override
 					public void run() {
-						transformPrx.translate(new VSVector3(0, 0, MOVE));
+						soldierPrx.move(VSDirection.UP);
 					}
 				});
 			}
@@ -66,7 +64,7 @@ public class UnityView extends JFrame {
 					
 					@Override
 					public void run() {
-						transformPrx.translate(new VSVector3(-MOVE, 0, 0));
+						soldierPrx.move(VSDirection.LEFT);
 					}
 				});
 			}
@@ -81,7 +79,7 @@ public class UnityView extends JFrame {
 					
 					@Override
 					public void run() {
-						transformPrx.translate(new VSVector3(0, 0, -MOVE));
+						soldierPrx.move(VSDirection.DOWN);
 					}
 				});
 			}
@@ -96,7 +94,7 @@ public class UnityView extends JFrame {
 					
 					@Override
 					public void run() {
-						transformPrx.translate(new VSVector3(MOVE, 0, 0));
+						soldierPrx.move(VSDirection.RIGHT);
 					}
 				});
 			}
@@ -110,7 +108,7 @@ public class UnityView extends JFrame {
 	}
 	public void setProxy(VSUnityClientPrx client) {
 		this.unityClientPrx = client;
-		transformPrx = unityClientPrx.getTransform();
+		soldierPrx = unityClientPrx.instantiateSoldier();
 	}
 	
 }

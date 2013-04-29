@@ -13,6 +13,10 @@ module vsm {
 		float y;
 		float z;
 	};
+	
+	enum VSDirection {
+		LEFT, RIGHT, UP, DOWN
+	};
 
 	class VSObject {
 		

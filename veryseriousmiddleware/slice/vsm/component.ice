@@ -13,7 +13,7 @@ module vsm {
 		class VSTransform extends VSComponent {
 			void translate(VSVector3 translation);
 			void rotate(VSVector3 translation);
-		}; 
+		};
 		
 	};
 };

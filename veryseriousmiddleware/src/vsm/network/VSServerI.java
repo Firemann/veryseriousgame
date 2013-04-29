@@ -7,6 +7,8 @@ import java.util.List;
 import javax.swing.SwingUtilities;
 
 import unityView.UnityView;
+import vsm.unity.VSUnityClientPrx;
+import vsm.unity.VSUnityClientPrxHelper;
 import Ice.Current;
 import Ice.Object;
 import Ice.ObjectFactory;
@@ -29,32 +31,32 @@ public class VSServerI extends VSServer {
 			throw new AlreadyConnectedException();
 		clientsList.add(client);
 		if(client.getClientType() == ClientType.UNITY) {
-			final VSUnityClientPrx azerty = VSUnityClientPrxHelper.checkedCast(client);
+			final VSUnityClientPrx unityPrx = VSUnityClientPrxHelper.checkedCast(client);
 			SwingUtilities.invokeLater(new Runnable() {
 				
 				@Override
 				public void run() {
-					unityView.setProxy(azerty);
+					unityView.setProxy(unityPrx);
 				}
 			});
 		}
 	}
 	
-    public static Ice.ObjectFactory ice_factory() {
-       return new ObjectFactory() {
-			
-			@Override
-			public Object create(String type) {
-		        if (type.equals(VSServer.ice_staticId()) )
-		            return new VSServerI(null);
-		        else
-		        	return null;
-			}
-
-			@Override
-			public void destroy() {
-			}
-		};
-    }
+//    public static Ice.ObjectFactory ice_factory() {
+//       return new ObjectFactory() {
+//			
+//			@Override
+//			public Object create(String type) {
+//		        if (type.equals(VSServer.ice_staticId()) )
+//		            return new VSServerI(null);
+//		        else
+//		        	return null;
+//			}
+//
+//			@Override
+//			public void destroy() {
+//			}
+//		};
+//    }
 
 }

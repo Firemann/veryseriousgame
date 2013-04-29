@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Ice\IceCube.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Cartoon Soldier\Scripts\soldier\soldierMovement.js">
     <Files>
-      <File FileName="Assets\Scripts\Ice\IceCube.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Cuby.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StartNetwork.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GroundAnalyst.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Lift.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Cartoon Soldier\Scripts\soldier\soldierMovement.js" Line="63" Column="68" />
+      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSSoldierI.cs" Line="44" Column="24" />
+      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSComponentTools.cs" Line="17" Column="10" />
+      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSNetworkManager.cs" Line="30" Column="75" />
+      <File FileName="Assets\AnimationStore\Standard Assets\Character Controllers\Sources\Scripts\Network\Menu.cs" Line="16" Column="1" />
+      <File FileName="Assets\AnimationStore\Standard Assets\Character Controllers\Sources\Scripts\Network\StartNetwork.cs" Line="61" Column="25" />
+      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSUnityClientI.cs" Line="46" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

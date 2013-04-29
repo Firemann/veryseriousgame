@@ -14,11 +14,7 @@ module vsm {
 		interface VSClient {
 			ClientType getClientType();
 		};
-	
-		class VSUnityClient extends VSObject implements VSClient {
-			vsm::component::VSTransform* getTransform();
-		};
-		
+
 		exception AlreadyConnectedException {
 			string reason;
 		};
