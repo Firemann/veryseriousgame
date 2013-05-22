@@ -13,6 +13,8 @@ public class Loom : MonoBehaviour
 {
 	private static Loom _current;
 	private int _count;
+	private Dictionary<Action, AutoResetEvent> _ares = new Dictionary<Action, AutoResetEvent>();
+	
 	/// <summary>
 	/// Return the current instance
 	/// </summary>
@@ -100,6 +102,12 @@ public class Loom : MonoBehaviour
 				Current._actions.Add(action);
 			}
 		}
+		
+		AutoResetEvent m = new AutoResetEvent(false);
+		lock(Current._ares)
+		{
+			Current._ares.Add (action, m);
+		}
 	}
 	
 	/// <summary>
@@ -138,6 +146,11 @@ public class Loom : MonoBehaviour
 			foreach(var a in actions)
 			{
 				a();
+				lock(Current._ares)
+				{
+					Current._ares[a].Set();
+					Current._ares.Remove (a);
+				}
 			}
 		}
 		lock(_delayed)
@@ -146,10 +159,23 @@ public class Loom : MonoBehaviour
 			{
 				_delayed.Remove(delayed);
 				delayed.action();
+				lock(Current._ares)
+				{
+					Current._ares[delayed.action].Set();
+					Current._ares.Remove (delayed.action);
+				}
 			}
 		}
-		
-		
+	}
+	
+	public static void waitForAction(Action a) {
+		AutoResetEvent m;
+		lock(Current._ares)
+		{
+			m = Current._ares[a];
+		}
+		m.WaitOne();
+		return;
 	}
 }
 

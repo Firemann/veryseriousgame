@@ -1,14 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Cartoon Soldier\Scripts\soldier\soldierMovement.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\whydoidoit.com\Radical\System\Loom.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Cartoon Soldier\Scripts\soldier\soldierMovement.js" Line="63" Column="68" />
-      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSSoldierI.cs" Line="44" Column="24" />
+      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSSoldierI.cs" Line="66" Column="6" />
+      <File FileName="Assets\Standard Assets\Cartoon Soldier\Scripts\soldier\soldierMovement.js" Line="151" Column="11" />
       <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSComponentTools.cs" Line="17" Column="10" />
-      <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSNetworkManager.cs" Line="30" Column="75" />
-      <File FileName="Assets\AnimationStore\Standard Assets\Character Controllers\Sources\Scripts\Network\Menu.cs" Line="16" Column="1" />
-      <File FileName="Assets\AnimationStore\Standard Assets\Character Controllers\Sources\Scripts\Network\StartNetwork.cs" Line="61" Column="25" />
       <File FileName="Assets\Destroyed_city_FREE\Scripts\VSM\VSUnityClientI.cs" Line="46" Column="10" />
+      <File FileName="Assets\Plugins\whydoidoit.com\Radical\System\Loom.cs" Line="150" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

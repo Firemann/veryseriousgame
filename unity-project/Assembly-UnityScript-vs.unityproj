@@ -51,6 +51,9 @@
      <None Include="Assets\AnimationStore\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
      <None Include="Assets\Standard Assets\Cartoon Soldier\Readme.txt" />
      <None Include="Assets\Destroyed_city_FREE\Shaders\AlphaTest-DiffuseDoubleSide.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="Ice">
  <HintPath>Assets\Librairies\Ice.dll</HintPath>
  </Reference>

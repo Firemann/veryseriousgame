@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using UnityEngine;
 
 namespace vsm.unity
@@ -59,7 +60,13 @@ namespace vsm.unity
 		
 		public override VSVector3 getPosition(Ice.Current current__)
 		{
-			return VSComponentTools.toVSVector3(soldierInst.transform.position);
+			VSVector3 vector3 = new VSVector3(0, 0, 0);
+			Action a = ()=>{
+				vector3 = VSComponentTools.toVSVector3(soldierInst.transform.position);
+			};
+			Loom.QueueOnMainThread(a);
+			Loom.waitForAction(a);
+			return vector3;
 		}
     }
 

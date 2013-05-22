@@ -1,13 +1,10 @@
 package vsm;
 
-import java.lang.reflect.InvocationTargetException;
-
 import unityView.UnityView;
 import vsm.network.VSServer;
 import vsm.network.VSServerI;
 import Ice.Application;
 import Ice.ObjectAdapter;
-import Ice.ObjectFactory;
 
 /**
  * The main class of the VSM Program, managing the Ice initialization
