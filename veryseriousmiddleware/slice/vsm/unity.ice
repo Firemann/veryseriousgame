@@ -7,19 +7,19 @@
 module vsm {
 	module unity {
 	
-		class VSSoldier {
+		class VSSoldier extends VSObject {
 			void move(VSDirection direction);
 			void run(bool isRunning);
 			void crounch();
 			VSVector3 getPosition();
 		};
 		
-		class VSUnityClient extends VSObject implements vsm::network::VSClient {
+		class VSUnity extends VSObject implements vsm::network::VSClient {
 			int getPlayersNumber();
 			VSSoldier* getSoldier(int playerNumber);
 			VSSoldier* instantiateSoldier();
 			void destroySoldier(VSSoldier* solider);
-		};
+		}; 
 
 	};
 };

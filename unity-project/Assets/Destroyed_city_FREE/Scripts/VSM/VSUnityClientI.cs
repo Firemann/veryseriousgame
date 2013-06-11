@@ -7,15 +7,16 @@ using vsm.component;
 using vsm.unity;
 using System.Collections.Generic;
 
-namespace vsm.network
-{
-    public class VSUnityClientI : VSUnityClient
+namespace vsm.unity {
+	
+    public class VSUnityClientI : VSUnity
     {
         private ClientType clientType;
         private List<VSSoldierPrx> soldiersList;
 
         public VSUnityClientI() {
             soldiersList = new List<VSSoldierPrx>();
+				
             VSNetworkManager.Adapter.add(this, VSNetworkManager.communicator().stringToIdentity("Unity"));
             VSClientPrx clientPrx = VSClientPrxHelper.uncheckedCast(
                 VSNetworkManager.Adapter.createProxy(VSNetworkManager.communicator().stringToIdentity("Unity")));

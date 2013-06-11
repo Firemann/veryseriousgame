@@ -1,9 +1,8 @@
 package vsm;
 
-import unityView.UnityView;
-import vsm.network.VSServer;
 import vsm.network.VSServerI;
 import Ice.Application;
+import Ice.EncodingVersion;
 import Ice.ObjectAdapter;
 
 /**
@@ -13,17 +12,17 @@ import Ice.ObjectAdapter;
  */
 public class VSMiddleware extends Application {
 	
-	/**
-	 * List of all VSM classes implemented by the server.
-	 * You have to add to the array any VSM class used with ice to automatically add the factory to the communicator
-	 * Moreover, don't forget to overwrite the "ice_factory" method of this object to create the correct factory
-	 */
-	//private final static Class<?> ICE_OBJECTS[] = {VSServerI.class};
+	private VSServerI server;
 
-	public static void main(String... args) {
-		VSMiddleware vsm = new VSMiddleware();
-		int status = vsm.main("Very Serious Middleware", args);
-		System.exit(status);
+	public VSMiddleware(VSServerI server) {
+		this.server = server;
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				VSMiddleware.this.main("Very Serious Middleware", new String[0]);
+			}
+		}).start();
 	}
 	
 	@Override
@@ -44,7 +43,7 @@ public class VSMiddleware extends Application {
 		shutdownOnInterrupt();
 		
 		// Adapter
-		ObjectAdapter adapter = communicator().createObjectAdapterWithEndpoints("VerySeriousMiddleware", "default -p 10000");
+		ObjectAdapter adapter = communicator().createObjectAdapterWithEndpoints("VerySeriousMiddleware", "default -p 5432");
 		
 //		// Add all the object factories to the Ice communicator
 //		for(Class<?> c:ICE_OBJECTS) {
@@ -58,14 +57,13 @@ public class VSMiddleware extends Application {
 //		}
 		
 		// Creating all the objects the client will use
-		VSServer server = new VSServerI(new UnityView());
 		adapter.add(server, communicator().stringToIdentity("VerySeriousMiddleware"));
 		
 		// Allow clients requests and wait until we are done
 		adapter.activate();
 		communicator().waitForShutdown();
+		System.exit(0);
 		return 0;
-		
 	}
 
 }

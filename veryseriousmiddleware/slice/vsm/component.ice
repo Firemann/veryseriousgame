@@ -15,7 +15,7 @@ module vsm {
 			void rotate(VSVector3 translation);
 		};
 		
-	};
+	}; 
 };
 
 #endif

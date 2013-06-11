@@ -60,7 +60,7 @@ function Update () {
 	var recoilVector : Vector3 = Vector3.zero;
 	var recoilInhibit : float = 1.0;
 	var deathInhibit : float = 1.0;
-	if(Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0) {
+	if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
 	    xMvt = Input.GetAxis("Horizontal");
 	    yMvt = Input.GetAxis("Vertical");
 	}
@@ -149,8 +149,8 @@ function Update () {
 	targetTurnSpeed *= deathInhibit;
 	turnSpeed = Mathf.Lerp(turnSpeed, targetTurnSpeed, Time.deltaTime * 25.0);
 	transform.rotation.eulerAngles.y += turnSpeed * Time.deltaTime;
-	xMvt = 0;
-	yMvt = 0;
+	//xMvt = 0;
+	//yMvt = 0;
 }
 
 function Move(xMvt : float, yMvt : float) {

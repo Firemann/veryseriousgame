@@ -31,7 +31,8 @@ namespace vsm
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
         public enum ClientType
         {
-            UNITY
+            UNITY,
+            NETWORKSIMULATOR
         }
 
         [_System.Runtime.InteropServices.ComVisible(false)]
@@ -580,7 +581,7 @@ namespace vsm
                 vsm.network.ClientType ret__;
                 IceInternal.BasicStream is__ = outAsync__.istr__;
                 is__.startReadEncaps();
-                ret__ = (vsm.network.ClientType)is__.readByte(1);
+                ret__ = (vsm.network.ClientType)is__.readByte(2);
                 is__.endReadEncaps();
                 return ret__;
             }
@@ -1120,7 +1121,7 @@ namespace vsm
                         IceInternal.BasicStream is__ = og__.istr();
                         is__.startReadEncaps();
                         vsm.network.ClientType ret__;
-                        ret__ = (vsm.network.ClientType)is__.readByte(1);
+                        ret__ = (vsm.network.ClientType)is__.readByte(2);
                         is__.endReadEncaps();
                         return ret__;
                     }
@@ -1382,7 +1383,7 @@ namespace vsm
                 inS__.istr().skipEmptyEncaps();
                 IceInternal.BasicStream os__ = inS__.ostr();
                 vsm.network.ClientType ret__ = obj__.getClientType(current__);
-                os__.writeByte((byte)ret__, 1);
+                os__.writeByte((byte)ret__, 2);
                 return Ice.DispatchStatus.DispatchOK;
             }
 

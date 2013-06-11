@@ -20,7 +20,7 @@ module vsm {
 
 	class VSObject {
 		
-	};
+	}; 
 
 };
 

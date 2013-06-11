@@ -2,13 +2,12 @@
 #define _NETWORK_ICE
 
 #include <vsm.ice>
-#include <vsm/component.ice>
 
 module vsm {
 	module network {
 
 		enum ClientType {
-			UNITY
+			UNITY, NETWORKSIMULATOR
 		};
 	
 		interface VSClient {
@@ -26,4 +25,4 @@ module vsm {
 	};
 };
 
-#endif
+#endif 

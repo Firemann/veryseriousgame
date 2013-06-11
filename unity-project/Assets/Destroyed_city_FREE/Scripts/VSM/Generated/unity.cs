@@ -40,7 +40,7 @@ namespace vsm
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1012")]
-        public abstract partial class VSSoldier : Ice.ObjectImpl, VSSoldierOperations_, VSSoldierOperationsNC_
+        public abstract partial class VSSoldier : vsm.VSObject, VSSoldierOperations_, VSSoldierOperationsNC_
         {
             #region Slice operations
 
@@ -84,6 +84,7 @@ namespace vsm
             public static new readonly string[] ids__ = 
             {
                 "::Ice::Object",
+                "::vsm::VSObject",
                 "::vsm::unity::VSSoldier"
             };
 
@@ -114,19 +115,19 @@ namespace vsm
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
             public override string ice_id()
             {
-                return ids__[1];
+                return ids__[2];
             }
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
             public override string ice_id(Ice.Current current__)
             {
-                return ids__[1];
+                return ids__[2];
             }
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
             public static new string ice_staticId()
             {
-                return ids__[1];
+                return ids__[2];
             }
 
             #endregion
@@ -300,7 +301,7 @@ namespace vsm
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
         [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1012")]
-        public abstract partial class VSUnityClient : vsm.VSObject, VSUnityClientOperations_, VSUnityClientOperationsNC_, vsm.network.VSClient
+        public abstract partial class VSUnity : vsm.VSObject, VSUnityOperations_, VSUnityOperationsNC_, vsm.network.VSClient
         {
             #region Slice operations
 
@@ -357,7 +358,7 @@ namespace vsm
                 "::Ice::Object",
                 "::vsm::VSObject",
                 "::vsm::network::VSClient",
-                "::vsm::unity::VSUnityClient"
+                "::vsm::unity::VSUnity"
             };
 
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
@@ -408,7 +409,7 @@ namespace vsm
 
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public static Ice.DispatchStatus getPlayersNumber___(VSUnityClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
+            public static Ice.DispatchStatus getPlayersNumber___(VSUnity obj__, IceInternal.Incoming inS__, Ice.Current current__)
             {
                 checkMode__(Ice.OperationMode.Normal, current__.mode);
                 inS__.istr().skipEmptyEncaps();
@@ -420,7 +421,7 @@ namespace vsm
 
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public static Ice.DispatchStatus getSoldier___(VSUnityClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
+            public static Ice.DispatchStatus getSoldier___(VSUnity obj__, IceInternal.Incoming inS__, Ice.Current current__)
             {
                 checkMode__(Ice.OperationMode.Normal, current__.mode);
                 IceInternal.BasicStream is__ = inS__.istr();
@@ -436,7 +437,7 @@ namespace vsm
 
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public static Ice.DispatchStatus instantiateSoldier___(VSUnityClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
+            public static Ice.DispatchStatus instantiateSoldier___(VSUnity obj__, IceInternal.Incoming inS__, Ice.Current current__)
             {
                 checkMode__(Ice.OperationMode.Normal, current__.mode);
                 inS__.istr().skipEmptyEncaps();
@@ -448,7 +449,7 @@ namespace vsm
 
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
             [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-            public static Ice.DispatchStatus destroySoldier___(VSUnityClient obj__, IceInternal.Incoming inS__, Ice.Current current__)
+            public static Ice.DispatchStatus destroySoldier___(VSUnity obj__, IceInternal.Incoming inS__, Ice.Current current__)
             {
                 checkMode__(Ice.OperationMode.Normal, current__.mode);
                 IceInternal.BasicStream is__ = inS__.istr();
@@ -555,7 +556,7 @@ namespace vsm
             public override void write__(Ice.OutputStream outS__)
             {
                 Ice.MarshalException ex = new Ice.MarshalException();
-                ex.reason = "type vsm::unity::VSUnityClient was not generated with stream support";
+                ex.reason = "type vsm::unity::VSUnity was not generated with stream support";
                 throw ex;
             }
 
@@ -563,7 +564,7 @@ namespace vsm
             public override void read__(Ice.InputStream inS__, bool rid__)
             {
                 Ice.MarshalException ex = new Ice.MarshalException();
-                ex.reason = "type vsm::unity::VSUnityClient was not generated with stream support";
+                ex.reason = "type vsm::unity::VSUnity was not generated with stream support";
                 throw ex;
             }
 
@@ -589,16 +590,16 @@ namespace vsm
         public delegate void Callback_VSSoldier_getPosition(vsm.VSVector3 ret__);
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public delegate void Callback_VSUnityClient_getPlayersNumber(int ret__);
+        public delegate void Callback_VSUnity_getPlayersNumber(int ret__);
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public delegate void Callback_VSUnityClient_getSoldier(vsm.unity.VSSoldierPrx ret__);
+        public delegate void Callback_VSUnity_getSoldier(vsm.unity.VSSoldierPrx ret__);
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public delegate void Callback_VSUnityClient_instantiateSoldier(vsm.unity.VSSoldierPrx ret__);
+        public delegate void Callback_VSUnity_instantiateSoldier(vsm.unity.VSSoldierPrx ret__);
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public delegate void Callback_VSUnityClient_destroySoldier();
+        public delegate void Callback_VSUnity_destroySoldier();
     }
 }
 
@@ -607,7 +608,7 @@ namespace vsm
     namespace unity
     {
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSSoldierPrx : Ice.ObjectPrx
+        public interface VSSoldierPrx : vsm.VSObjectPrx
         {
             void move(vsm.VSDirection direction);
             void move(vsm.VSDirection direction, _System.Collections.Generic.Dictionary<string, string> context__);
@@ -655,13 +656,13 @@ namespace vsm
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSUnityClientPrx : vsm.VSObjectPrx, vsm.network.VSClientPrx
+        public interface VSUnityPrx : vsm.VSObjectPrx, vsm.network.VSClientPrx
         {
             int getPlayersNumber();
             int getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> context__);
 
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getPlayersNumber> begin_getPlayersNumber();
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getPlayersNumber> begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__);
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_getPlayersNumber> begin_getPlayersNumber();
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_getPlayersNumber> begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__);
 
             Ice.AsyncResult begin_getPlayersNumber(Ice.AsyncCallback cb__, object cookie__);
             Ice.AsyncResult begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
@@ -671,8 +672,8 @@ namespace vsm
             vsm.unity.VSSoldierPrx getSoldier(int playerNumber);
             vsm.unity.VSSoldierPrx getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> context__);
 
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getSoldier> begin_getSoldier(int playerNumber);
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getSoldier> begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__);
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_getSoldier> begin_getSoldier(int playerNumber);
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_getSoldier> begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__);
 
             Ice.AsyncResult begin_getSoldier(int playerNumber, Ice.AsyncCallback cb__, object cookie__);
             Ice.AsyncResult begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
@@ -682,8 +683,8 @@ namespace vsm
             vsm.unity.VSSoldierPrx instantiateSoldier();
             vsm.unity.VSSoldierPrx instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> context__);
 
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_instantiateSoldier> begin_instantiateSoldier();
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_instantiateSoldier> begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__);
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_instantiateSoldier> begin_instantiateSoldier();
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_instantiateSoldier> begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__);
 
             Ice.AsyncResult begin_instantiateSoldier(Ice.AsyncCallback cb__, object cookie__);
             Ice.AsyncResult begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
@@ -693,8 +694,8 @@ namespace vsm
             void destroySoldier(vsm.unity.VSSoldierPrx solider);
             void destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> context__);
 
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider);
-            Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__);
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider);
+            Ice.AsyncResult<vsm.unity.Callback_VSUnity_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__);
 
             Ice.AsyncResult begin_destroySoldier(vsm.unity.VSSoldierPrx solider, Ice.AsyncCallback cb__, object cookie__);
             Ice.AsyncResult begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__, Ice.AsyncCallback cb__, object cookie__);
@@ -733,7 +734,7 @@ namespace vsm
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSUnityClientOperations_ : vsm.network.VSClientOperations_
+        public interface VSUnityOperations_ : vsm.network.VSClientOperations_
         {
             int getPlayersNumber(Ice.Current current__);
 
@@ -745,7 +746,7 @@ namespace vsm
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSUnityClientOperationsNC_ : vsm.network.VSClientOperationsNC_
+        public interface VSUnityOperationsNC_ : vsm.network.VSClientOperationsNC_
         {
             int getPlayersNumber();
 
@@ -1294,12 +1295,13 @@ namespace vsm
             public static readonly string[] ids__ =
             {
                 "::Ice::Object",
+                "::vsm::VSObject",
                 "::vsm::unity::VSSoldier"
             };
 
             public static string ice_staticId()
             {
-                return ids__[1];
+                return ids__[2];
             }
 
             #endregion
@@ -1338,7 +1340,7 @@ namespace vsm
 
         [_System.Runtime.InteropServices.ComVisible(false)]
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public sealed class VSUnityClientPrxHelper : Ice.ObjectPrxHelperBase, VSUnityClientPrx
+        public sealed class VSUnityPrxHelper : Ice.ObjectPrxHelperBase, VSUnityPrx
         {
             #region Synchronous operations
 
@@ -1366,7 +1368,7 @@ namespace vsm
                     {
                         checkTwowayOnly__("getClientType");
                         delBase__ = getDelegate__(false);
-                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        VSUnityDel_ del__ = (VSUnityDel_)delBase__;
                         return del__.getClientType(context__);
                     }
                     catch(IceInternal.LocalExceptionWrapper ex__)
@@ -1403,7 +1405,7 @@ namespace vsm
                     try
                     {
                         delBase__ = getDelegate__(false);
-                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        VSUnityDel_ del__ = (VSUnityDel_)delBase__;
                         del__.destroySoldier(solider, context__);
                         return;
                     }
@@ -1442,7 +1444,7 @@ namespace vsm
                     {
                         checkTwowayOnly__("getPlayersNumber");
                         delBase__ = getDelegate__(false);
-                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        VSUnityDel_ del__ = (VSUnityDel_)delBase__;
                         return del__.getPlayersNumber(context__);
                     }
                     catch(IceInternal.LocalExceptionWrapper ex__)
@@ -1480,7 +1482,7 @@ namespace vsm
                     {
                         checkTwowayOnly__("getSoldier");
                         delBase__ = getDelegate__(false);
-                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        VSUnityDel_ del__ = (VSUnityDel_)delBase__;
                         return del__.getSoldier(playerNumber, context__);
                     }
                     catch(IceInternal.LocalExceptionWrapper ex__)
@@ -1518,7 +1520,7 @@ namespace vsm
                     {
                         checkTwowayOnly__("instantiateSoldier");
                         delBase__ = getDelegate__(false);
-                        VSUnityClientDel_ del__ = (VSUnityClientDel_)delBase__;
+                        VSUnityDel_ del__ = (VSUnityDel_)delBase__;
                         return del__.instantiateSoldier(context__);
                     }
                     catch(IceInternal.LocalExceptionWrapper ex__)
@@ -1576,7 +1578,7 @@ namespace vsm
                 vsm.network.ClientType ret__;
                 IceInternal.BasicStream is__ = outAsync__.istr__;
                 is__.startReadEncaps();
-                ret__ = (vsm.network.ClientType)is__.readByte(1);
+                ret__ = (vsm.network.ClientType)is__.readByte(2);
                 is__.endReadEncaps();
                 return ret__;
             }
@@ -1624,12 +1626,12 @@ namespace vsm
                 }
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider)
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider)
             {
                 return begin_destroySoldier(solider, null, false, null, null);
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__)
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__)
             {
                 return begin_destroySoldier(solider, ctx__, true, null, null);
             }
@@ -1651,9 +1653,9 @@ namespace vsm
                 end__(r__, __destroySoldier_name);
             }
 
-            private Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            private Ice.AsyncResult<vsm.unity.Callback_VSUnity_destroySoldier> begin_destroySoldier(vsm.unity.VSSoldierPrx solider, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
             {
-                IceInternal.OnewayOutgoingAsync<vsm.unity.Callback_VSUnityClient_destroySoldier> result__ = new IceInternal.OnewayOutgoingAsync<vsm.unity.Callback_VSUnityClient_destroySoldier>(this, __destroySoldier_name, destroySoldier_completed__, cookie__);
+                IceInternal.OnewayOutgoingAsync<vsm.unity.Callback_VSUnity_destroySoldier> result__ = new IceInternal.OnewayOutgoingAsync<vsm.unity.Callback_VSUnity_destroySoldier>(this, __destroySoldier_name, destroySoldier_completed__, cookie__);
                 if(cb__ != null)
                 {
                     result__.whenCompletedWithAsyncCallback(cb__);
@@ -1673,7 +1675,7 @@ namespace vsm
                 return result__;
             }
 
-            private void destroySoldier_completed__(vsm.unity.Callback_VSUnityClient_destroySoldier cb__)
+            private void destroySoldier_completed__(vsm.unity.Callback_VSUnity_destroySoldier cb__)
             {
                 if(cb__ != null)
                 {
@@ -1681,12 +1683,12 @@ namespace vsm
                 }
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getPlayersNumber> begin_getPlayersNumber()
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_getPlayersNumber> begin_getPlayersNumber()
             {
                 return begin_getPlayersNumber(null, false, null, null);
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getPlayersNumber> begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__)
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_getPlayersNumber> begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__)
             {
                 return begin_getPlayersNumber(ctx__, true, null, null);
             }
@@ -1726,10 +1728,10 @@ namespace vsm
                 return ret__;
             }
 
-            private Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getPlayersNumber> begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            private Ice.AsyncResult<vsm.unity.Callback_VSUnity_getPlayersNumber> begin_getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
             {
                 checkAsyncTwowayOnly__(__getPlayersNumber_name);
-                IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnityClient_getPlayersNumber> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnityClient_getPlayersNumber>(this, __getPlayersNumber_name, getPlayersNumber_completed__, cookie__);
+                IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnity_getPlayersNumber> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnity_getPlayersNumber>(this, __getPlayersNumber_name, getPlayersNumber_completed__, cookie__);
                 if(cb__ != null)
                 {
                     result__.whenCompletedWithAsyncCallback(cb__);
@@ -1748,7 +1750,7 @@ namespace vsm
                 return result__;
             }
 
-            private void getPlayersNumber_completed__(Ice.AsyncResult r__, vsm.unity.Callback_VSUnityClient_getPlayersNumber cb__, Ice.ExceptionCallback excb__)
+            private void getPlayersNumber_completed__(Ice.AsyncResult r__, vsm.unity.Callback_VSUnity_getPlayersNumber cb__, Ice.ExceptionCallback excb__)
             {
                 int ret__;
                 try
@@ -1769,12 +1771,12 @@ namespace vsm
                 }
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getSoldier> begin_getSoldier(int playerNumber)
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_getSoldier> begin_getSoldier(int playerNumber)
             {
                 return begin_getSoldier(playerNumber, null, false, null, null);
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getSoldier> begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__)
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_getSoldier> begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__)
             {
                 return begin_getSoldier(playerNumber, ctx__, true, null, null);
             }
@@ -1814,10 +1816,10 @@ namespace vsm
                 return ret__;
             }
 
-            private Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_getSoldier> begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            private Ice.AsyncResult<vsm.unity.Callback_VSUnity_getSoldier> begin_getSoldier(int playerNumber, _System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
             {
                 checkAsyncTwowayOnly__(__getSoldier_name);
-                IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnityClient_getSoldier> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnityClient_getSoldier>(this, __getSoldier_name, getSoldier_completed__, cookie__);
+                IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnity_getSoldier> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnity_getSoldier>(this, __getSoldier_name, getSoldier_completed__, cookie__);
                 if(cb__ != null)
                 {
                     result__.whenCompletedWithAsyncCallback(cb__);
@@ -1837,7 +1839,7 @@ namespace vsm
                 return result__;
             }
 
-            private void getSoldier_completed__(Ice.AsyncResult r__, vsm.unity.Callback_VSUnityClient_getSoldier cb__, Ice.ExceptionCallback excb__)
+            private void getSoldier_completed__(Ice.AsyncResult r__, vsm.unity.Callback_VSUnity_getSoldier cb__, Ice.ExceptionCallback excb__)
             {
                 vsm.unity.VSSoldierPrx ret__;
                 try
@@ -1858,12 +1860,12 @@ namespace vsm
                 }
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_instantiateSoldier> begin_instantiateSoldier()
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_instantiateSoldier> begin_instantiateSoldier()
             {
                 return begin_instantiateSoldier(null, false, null, null);
             }
 
-            public Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_instantiateSoldier> begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__)
+            public Ice.AsyncResult<vsm.unity.Callback_VSUnity_instantiateSoldier> begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__)
             {
                 return begin_instantiateSoldier(ctx__, true, null, null);
             }
@@ -1903,10 +1905,10 @@ namespace vsm
                 return ret__;
             }
 
-            private Ice.AsyncResult<vsm.unity.Callback_VSUnityClient_instantiateSoldier> begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
+            private Ice.AsyncResult<vsm.unity.Callback_VSUnity_instantiateSoldier> begin_instantiateSoldier(_System.Collections.Generic.Dictionary<string, string> ctx__, bool explicitContext__, Ice.AsyncCallback cb__, object cookie__)
             {
                 checkAsyncTwowayOnly__(__instantiateSoldier_name);
-                IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnityClient_instantiateSoldier> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnityClient_instantiateSoldier>(this, __instantiateSoldier_name, instantiateSoldier_completed__, cookie__);
+                IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnity_instantiateSoldier> result__ =  new IceInternal.TwowayOutgoingAsync<vsm.unity.Callback_VSUnity_instantiateSoldier>(this, __instantiateSoldier_name, instantiateSoldier_completed__, cookie__);
                 if(cb__ != null)
                 {
                     result__.whenCompletedWithAsyncCallback(cb__);
@@ -1925,7 +1927,7 @@ namespace vsm
                 return result__;
             }
 
-            private void instantiateSoldier_completed__(Ice.AsyncResult r__, vsm.unity.Callback_VSUnityClient_instantiateSoldier cb__, Ice.ExceptionCallback excb__)
+            private void instantiateSoldier_completed__(Ice.AsyncResult r__, vsm.unity.Callback_VSUnity_instantiateSoldier cb__, Ice.ExceptionCallback excb__)
             {
                 vsm.unity.VSSoldierPrx ret__;
                 try
@@ -1950,39 +1952,39 @@ namespace vsm
 
             #region Checked and unchecked cast operations
 
-            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b)
+            public static VSUnityPrx checkedCast(Ice.ObjectPrx b)
             {
                 if(b == null)
                 {
                     return null;
                 }
-                VSUnityClientPrx r = b as VSUnityClientPrx;
+                VSUnityPrx r = b as VSUnityPrx;
                 if((r == null) && b.ice_isA(ice_staticId()))
                 {
-                    VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                    VSUnityPrxHelper h = new VSUnityPrxHelper();
                     h.copyFrom__(b);
                     r = h;
                 }
                 return r;
             }
 
-            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b, _System.Collections.Generic.Dictionary<string, string> ctx)
+            public static VSUnityPrx checkedCast(Ice.ObjectPrx b, _System.Collections.Generic.Dictionary<string, string> ctx)
             {
                 if(b == null)
                 {
                     return null;
                 }
-                VSUnityClientPrx r = b as VSUnityClientPrx;
+                VSUnityPrx r = b as VSUnityPrx;
                 if((r == null) && b.ice_isA(ice_staticId(), ctx))
                 {
-                    VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                    VSUnityPrxHelper h = new VSUnityPrxHelper();
                     h.copyFrom__(b);
                     r = h;
                 }
                 return r;
             }
 
-            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b, string f)
+            public static VSUnityPrx checkedCast(Ice.ObjectPrx b, string f)
             {
                 if(b == null)
                 {
@@ -1993,7 +1995,7 @@ namespace vsm
                 {
                     if(bb.ice_isA(ice_staticId()))
                     {
-                        VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                        VSUnityPrxHelper h = new VSUnityPrxHelper();
                         h.copyFrom__(bb);
                         return h;
                     }
@@ -2004,7 +2006,7 @@ namespace vsm
                 return null;
             }
 
-            public static VSUnityClientPrx checkedCast(Ice.ObjectPrx b, string f, _System.Collections.Generic.Dictionary<string, string> ctx)
+            public static VSUnityPrx checkedCast(Ice.ObjectPrx b, string f, _System.Collections.Generic.Dictionary<string, string> ctx)
             {
                 if(b == null)
                 {
@@ -2015,7 +2017,7 @@ namespace vsm
                 {
                     if(bb.ice_isA(ice_staticId(), ctx))
                     {
-                        VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                        VSUnityPrxHelper h = new VSUnityPrxHelper();
                         h.copyFrom__(bb);
                         return h;
                     }
@@ -2026,30 +2028,30 @@ namespace vsm
                 return null;
             }
 
-            public static VSUnityClientPrx uncheckedCast(Ice.ObjectPrx b)
+            public static VSUnityPrx uncheckedCast(Ice.ObjectPrx b)
             {
                 if(b == null)
                 {
                     return null;
                 }
-                VSUnityClientPrx r = b as VSUnityClientPrx;
+                VSUnityPrx r = b as VSUnityPrx;
                 if(r == null)
                 {
-                    VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                    VSUnityPrxHelper h = new VSUnityPrxHelper();
                     h.copyFrom__(b);
                     r = h;
                 }
                 return r;
             }
 
-            public static VSUnityClientPrx uncheckedCast(Ice.ObjectPrx b, string f)
+            public static VSUnityPrx uncheckedCast(Ice.ObjectPrx b, string f)
             {
                 if(b == null)
                 {
                     return null;
                 }
                 Ice.ObjectPrx bb = b.ice_facet(f);
-                VSUnityClientPrxHelper h = new VSUnityClientPrxHelper();
+                VSUnityPrxHelper h = new VSUnityPrxHelper();
                 h.copyFrom__(bb);
                 return h;
             }
@@ -2059,7 +2061,7 @@ namespace vsm
                 "::Ice::Object",
                 "::vsm::VSObject",
                 "::vsm::network::VSClient",
-                "::vsm::unity::VSUnityClient"
+                "::vsm::unity::VSUnity"
             };
 
             public static string ice_staticId()
@@ -2073,25 +2075,25 @@ namespace vsm
 
             protected override Ice.ObjectDelM_ createDelegateM__()
             {
-                return new VSUnityClientDelM_();
+                return new VSUnityDelM_();
             }
 
             protected override Ice.ObjectDelD_ createDelegateD__()
             {
-                return new VSUnityClientDelD_();
+                return new VSUnityDelD_();
             }
 
-            public static void write__(IceInternal.BasicStream os__, VSUnityClientPrx v__)
+            public static void write__(IceInternal.BasicStream os__, VSUnityPrx v__)
             {
                 os__.writeProxy(v__);
             }
 
-            public static VSUnityClientPrx read__(IceInternal.BasicStream is__)
+            public static VSUnityPrx read__(IceInternal.BasicStream is__)
             {
                 Ice.ObjectPrx proxy = is__.readProxy();
                 if(proxy != null)
                 {
-                    VSUnityClientPrxHelper result = new VSUnityClientPrxHelper();
+                    VSUnityPrxHelper result = new VSUnityPrxHelper();
                     result.copyFrom__(proxy);
                     return result;
                 }
@@ -2108,7 +2110,7 @@ namespace vsm
     namespace unity
     {
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSSoldierDel_ : Ice.ObjectDel_
+        public interface VSSoldierDel_ : vsm.VSObjectDel_
         {
             void move(vsm.VSDirection direction, _System.Collections.Generic.Dictionary<string, string> context__);
 
@@ -2120,7 +2122,7 @@ namespace vsm
         }
 
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public interface VSUnityClientDel_ : vsm.VSObjectDel_, vsm.network.VSClientDel_
+        public interface VSUnityDel_ : vsm.VSObjectDel_, vsm.network.VSClientDel_
         {
             int getPlayersNumber(_System.Collections.Generic.Dictionary<string, string> context__);
 
@@ -2305,7 +2307,7 @@ namespace vsm
 
         [_System.Runtime.InteropServices.ComVisible(false)]
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public sealed class VSUnityClientDelM_ : Ice.ObjectDelM_, VSUnityClientDel_
+        public sealed class VSUnityDelM_ : Ice.ObjectDelM_, VSUnityDel_
         {
             public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
             {
@@ -2329,7 +2331,7 @@ namespace vsm
                         IceInternal.BasicStream is__ = og__.istr();
                         is__.startReadEncaps();
                         vsm.network.ClientType ret__;
-                        ret__ = (vsm.network.ClientType)is__.readByte(1);
+                        ret__ = (vsm.network.ClientType)is__.readByte(2);
                         is__.endReadEncaps();
                         return ret__;
                     }
@@ -2696,7 +2698,7 @@ namespace vsm
 
         [_System.Runtime.InteropServices.ComVisible(false)]
         [_System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.4.2")]
-        public sealed class VSUnityClientDelD_ : Ice.ObjectDelD_, VSUnityClientDel_
+        public sealed class VSUnityDelD_ : Ice.ObjectDelD_, VSUnityDel_
         {
             [_System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031")]
             public vsm.network.ClientType getClientType(_System.Collections.Generic.Dictionary<string, string> context__)
@@ -2706,10 +2708,10 @@ namespace vsm
                 vsm.network.ClientType result__ = vsm.network.ClientType.UNITY;
                 IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
                 {
-                    VSUnityClient servant__ = null;
+                    VSUnity servant__ = null;
                     try
                     {
-                        servant__ = (VSUnityClient)obj__;
+                        servant__ = (VSUnity)obj__;
                     }
                     catch(_System.InvalidCastException)
                     {
@@ -2750,10 +2752,10 @@ namespace vsm
                 initCurrent__(ref current__, "destroySoldier", Ice.OperationMode.Normal, context__);
                 IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
                 {
-                    VSUnityClient servant__ = null;
+                    VSUnity servant__ = null;
                     try
                     {
-                        servant__ = (VSUnityClient)obj__;
+                        servant__ = (VSUnity)obj__;
                     }
                     catch(_System.InvalidCastException)
                     {
@@ -2794,10 +2796,10 @@ namespace vsm
                 int result__ = 0;
                 IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
                 {
-                    VSUnityClient servant__ = null;
+                    VSUnity servant__ = null;
                     try
                     {
-                        servant__ = (VSUnityClient)obj__;
+                        servant__ = (VSUnity)obj__;
                     }
                     catch(_System.InvalidCastException)
                     {
@@ -2839,10 +2841,10 @@ namespace vsm
                 vsm.unity.VSSoldierPrx result__ = null;
                 IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
                 {
-                    VSUnityClient servant__ = null;
+                    VSUnity servant__ = null;
                     try
                     {
-                        servant__ = (VSUnityClient)obj__;
+                        servant__ = (VSUnity)obj__;
                     }
                     catch(_System.InvalidCastException)
                     {
@@ -2884,10 +2886,10 @@ namespace vsm
                 vsm.unity.VSSoldierPrx result__ = null;
                 IceInternal.Direct.RunDelegate run__ = delegate(Ice.Object obj__)
                 {
-                    VSUnityClient servant__ = null;
+                    VSUnity servant__ = null;
                     try
                     {
-                        servant__ = (VSUnityClient)obj__;
+                        servant__ = (VSUnity)obj__;
                     }
                     catch(_System.InvalidCastException)
                     {

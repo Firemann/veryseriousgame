@@ -20,15 +20,16 @@ namespace vsm.network
 
         public override int run(string[] args)
         {
-            Ice.ObjectPrx obj = communicator().stringToProxy("VerySeriousMiddleware:default -p 10000");
+            Ice.ObjectPrx obj = communicator().stringToProxy("VerySeriousMiddleware:default -p 5432");
 
             Server = VSServerPrxHelper.checkedCast(obj);
             if (Server == null)
                 throw new ApplicationException("Invalid proxy");
             MonoBehaviour.print("Server link ok");
-
-            Adapter = communicator().createObjectAdapterWithEndpoints("Unity", "default -p 10001");
+            Adapter = communicator().createObjectAdapterWithEndpoints("Unity", "default -p 5433");
+			MonoBehaviour.print("trololol2");
             Adapter.activate();
+			MonoBehaviour.print("Server link okidoci");
 
             communicator().waitForShutdown();
 
