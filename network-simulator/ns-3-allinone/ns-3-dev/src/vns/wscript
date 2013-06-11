@@ -1,0 +1,50 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+# def options(opt):
+#     pass
+
+# def configure(conf):
+#     conf.check_nonfatal(header_name='stdint.h', define_name='HAVE_STDINT_H')
+
+def configure(conf):
+    conf.env['lIce'] = conf.check(mandatory=True, lib='Ice', uselib_store='LICE')
+    conf.env['lIceUtil'] = conf.check(mandatory=True, lib='IceUtil', uselib_store='LICEUTIL')
+#    conf.env.append_value("CXXFLAGS", ["-std=c++0x"])
+
+def build(bld):
+    module = bld.create_ns3_module('vns', ['internet', 'config-store', 'tools'])
+    module.source = [
+        'model/vns-app-client.cc',
+        'model/vns-app-antenna.cc',
+        'helper/vns-app-helper.cc',
+        'model/network.cc',
+        'model/networksimulator.cc',
+        'model/vnsIce.cc',
+        'model/vsm.cc'
+        ]
+
+    module_test = bld.create_ns3_module_test_library('vns')
+    module_test.source = [
+        'test/vns-test-suite.cc',
+        ]
+
+    module.use.append("LICE")
+    module.use.append("LICEUTIL")
+
+    headers = bld(features='ns3header')
+    headers.module = 'vns'
+    headers.source = [
+        'model/vns-app-client.h',
+        'model/vns-app-antenna.h',
+        'helper/vns-app-helper.h',
+        'model/network.h',
+        'model/networksimulator.h',
+        'model/vnsIce.h',
+        'model/vsm.h'
+        ]
+
+    if bld.env.ENABLE_EXAMPLES:
+        bld.recurse('examples')
+
+    # bld.ns3_python_bindings()
+
